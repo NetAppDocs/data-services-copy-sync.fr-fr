@@ -1,0 +1,9 @@
+= Corrections de bugs
+:allow-uri-read: 
+
+
+
+
+=== Corrections de bugs
+
+Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corriger quelques bugs.  La nouvelle version du courtier de données est la 1.0.55.

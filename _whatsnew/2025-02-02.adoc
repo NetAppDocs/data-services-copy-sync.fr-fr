@@ -1,0 +1,11 @@
+= Nouveau support du système d'exploitation pour le courtier de données
+:allow-uri-read: 
+
+
+
+
+=== Nouveau support du système d'exploitation pour le courtier de données
+
+Le courtier de données est désormais pris en charge sur les hôtes exécutant Red Hat Enterprise 9.4, Ubuntu 23.04 et Ubuntu 24.04.
+
+https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-host-requirements["Afficher les exigences de l'hôte Linux"] .

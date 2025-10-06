@@ -1,0 +1,176 @@
+---
+sidebar: sidebar 
+permalink: task-installing-gcp.html 
+keywords: data broker, install, gcp, google, networking, permissions, regions, install data broker in gcp, install in gcp, deploy in gcp, deploy data broker in gcp, install data broker in google, install in google, deploy in google, deploy data broker in google, networking requirements, port, ports, 443, port 443, ntp, network time protocol, gcp data broker, service account 
+summary: 'Lorsque vous créez un nouveau courtier de données, choisissez l"option Google Cloud Data Broker pour déployer le logiciel de courtier de données sur une nouvelle instance de machine virtuelle dans un VPC.  NetApp Copy and Sync vous guide tout au long du processus d"installation, mais les exigences et les étapes sont répétées sur cette page pour vous aider à préparer l"installation.' 
+---
+= Créer un nouveau courtier de données dans Google Cloud pour NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous créez un nouveau groupe de courtiers de données pour NetApp Copy and Sync, choisissez Google Cloud Platform pour déployer le logiciel de courtier de données sur une nouvelle instance de machine virtuelle dans un VPC Google Cloud.  NetApp Copy and Sync vous guide tout au long du processus d'installation, mais les exigences et les étapes sont répétées sur cette page pour vous aider à préparer l'installation.
+
+Vous avez également la possibilité d'installer le courtier de données sur un hôte Linux existant dans le cloud ou dans vos locaux. link:task-installing-linux.html["Apprendre encore plus"] .
+
+
+
+== Régions Google Cloud prises en charge
+
+Toutes les régions sont prises en charge.
+
+
+
+== Privilèges root
+
+Le logiciel de courtage de données s'exécute automatiquement en tant que root sur l'hôte Linux.  L'exécution en tant que root est une exigence pour les opérations de courtier en données.  Par exemple, pour monter des actions.
+
+
+
+== Exigences de mise en réseau
+
+* Le courtier de données a besoin d'une connexion Internet sortante pour pouvoir interroger Copy and Sync pour les tâches sur le port 443.
++
+Lorsque Copy and Sync déploie le courtier de données dans Google Cloud, il crée un groupe de sécurité qui active la communication sortante requise.
+
++
+Si vous devez limiter la connectivité sortante, consultezlink:reference-networking.html["la liste des points de terminaison contactés par le courtier de données"] .
+
+* NetApp recommande de configurer la source, la cible et le courtier de données pour utiliser un service NTP (Network Time Protocol).  La différence de temps entre les trois composants ne doit pas dépasser 5 minutes.
+
+
+
+
+== Autorisations requises pour déployer le courtier de données dans Google Cloud
+
+Assurez-vous que l’utilisateur Google Cloud qui déploie le courtier de données dispose des autorisations suivantes :
+
+[source, yaml]
+----
+- compute.networks.list
+- compute.regions.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.operations.get
+- iam.serviceAccounts.list
+----
+
+
+== Autorisations requises pour le compte de service
+
+Lorsque vous déployez le courtier de données, vous devez sélectionner un compte de service disposant des autorisations suivantes :
+
+[source, yaml]
+----
+- logging.logEntries.create
+- resourcemanager.projects.get
+- storage.buckets.get
+- storage.buckets.list
+- storage.objects.create
+- storage.objects.delete
+- storage.objects.get
+- storage.objects.getIamPolicy
+- storage.objects.list
+- storage.objects.setIamPolicy
+- storage.objects.update
+- iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+----
+Remarques :
+
+. L'autorisation « iam.serviceAccounts.signJwt » n'est requise que si vous prévoyez de configurer le courtier de données pour utiliser un coffre-fort HashiCorp externe.
+. Les autorisations « pubsub.* » et « storage.buckets.update » ne sont requises que si vous prévoyez d'activer le paramètre Synchronisation continue sur une relation de synchronisation de Google Cloud Storage vers un autre emplacement de stockage cloud. link:task-creating-relationships.html#settings["En savoir plus sur l'option de synchronisation continue"] .
+. Les autorisations « cloudkms.cryptoKeys.list » et « cloudkms.keyRings.list » ne sont requises que si vous prévoyez d'utiliser une clé KMS gérée par le client sur un bucket Google Cloud Storage cible.
+
+
+
+
+== Créer le courtier de données
+
+Il existe plusieurs façons de créer un nouveau courtier de données.  Ces étapes décrivent comment installer un courtier de données dans Google Cloud lorsque vous créez une relation de synchronisation.
+
+.Étapes
+. link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
+. Sélectionnez *Créer une nouvelle synchronisation*.
+. Sur la page *Définir la relation de synchronisation*, choisissez une source et une cible et sélectionnez *Continuer*.
++
+Suivez les étapes jusqu'à atteindre la page *Data Broker Group*.
+
+. Sur la page *Groupe de courtiers de données*, sélectionnez *Créer un courtier de données*, puis sélectionnez *Google Cloud Platform*.
++
+image:screenshot-google.png["Une capture d’écran de la page Data Broker qui vous permet de choisir entre un courtier de données AWS, Azure, Google Cloud et On-Prem."]
+
+. Saisissez un nom pour le courtier de données et sélectionnez *Continuer*.
+. Si vous y êtes invité, connectez-vous avec votre compte Google.
++
+Le formulaire appartient et est hébergé par Google. Vos informations d’identification ne sont pas fournies à NetApp.
+
+. Sélectionnez un projet et un compte de service, puis choisissez un emplacement pour le courtier de données, en indiquant notamment si vous souhaitez activer ou désactiver une adresse IP publique.
++
+Si vous n'activez pas d'adresse IP publique, vous devrez définir un serveur proxy à l'étape suivante.
+
++
+image:screenshot_data_broker_gcp.png["Une capture d’écran qui montre les informations requises pour déployer un courtier de données dans Google Cloud."]
+
+. Spécifiez une configuration de proxy, si un proxy est requis pour l'accès Internet dans le VPC.
++
+Si un proxy est requis pour l'accès à Internet, le proxy doit être dans Google Cloud et utiliser le même compte de service que le courtier de données.
+
+. Une fois le courtier de données disponible, sélectionnez *Continuer* dans Copier et synchroniser.
++
+Le déploiement de l’instance prend environ 5 à 10 minutes.  Vous pouvez surveiller la progression à partir de Copier et Sync, qui s'actualise automatiquement lorsque l'instance est disponible.
+
+. Complétez les pages de l’assistant pour créer la nouvelle relation de synchronisation.
+
+
+.Résultat
+Vous avez déployé un courtier de données dans Google Cloud et créé une nouvelle relation de synchronisation.  Vous pouvez utiliser ce courtier de données avec des relations de synchronisation supplémentaires.
+
+
+
+== Accorder des autorisations pour utiliser des buckets dans d'autres projets Google Cloud
+
+Lorsque vous créez une relation de synchronisation et choisissez Google Cloud Storage comme source ou cible, Copier et synchroniser vous permet de choisir parmi les compartiments que le compte de service du courtier de données est autorisé à utiliser.  Par défaut, cela inclut les buckets qui se trouvent dans le _même_ projet que le compte de service du courtier de données.  Mais vous pouvez choisir des buckets à partir d'_autres_ projets si vous fournissez les autorisations requises.
+
+.Étapes
+. Ouvrez la console Google Cloud Platform et chargez le service Cloud Storage.
+. Sélectionnez le nom du bucket que vous souhaitez utiliser comme source ou cible dans une relation de synchronisation.
+. Sélectionnez *Autorisations*.
+. Sélectionnez *Ajouter*.
+. Saisissez le nom du compte de service du courtier en données.
+. Sélectionnez un rôle qui fournit<<Autorisations requises pour le compte de service,les mêmes autorisations que celles indiquées ci-dessus>> .
+. Sélectionnez *Enregistrer*.
+
+
+.Résultat
+Lorsque vous configurez une relation de synchronisation, vous pouvez désormais choisir ce bucket comme source ou cible dans la relation de synchronisation.
+
+
+
+== Détails sur l'instance de machine virtuelle du courtier de données
+
+Copy and Sync crée un courtier de données dans Google Cloud à l’aide de la configuration suivante.
+
+Compatibilité Node.js:: v21.2.0
+Type de machine:: n2-standard-4
+vCPU:: 4
+BÉLIER:: 15 Go
+Système opérateur:: Rocky Linux 9,0
+Taille et type de disque:: Disque dur 20 Go PD-standard
+

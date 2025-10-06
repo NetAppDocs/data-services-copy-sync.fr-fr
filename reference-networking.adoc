@@ -1,0 +1,123 @@
+---
+sidebar: sidebar 
+permalink: reference-networking.html 
+keywords: networking, 443, port, ports, port 443, connections, connectivity, path, paths, vpn, copy and sync, netapp, bluexp, cloud sync,connectivity,data broker 
+summary: 'La mise en réseau pour NetApp Copy and Sync inclut la connectivité entre le groupe de courtiers de données et les emplacements source et cible, ainsi qu"une connexion Internet sortante des courtiers de données via le port 443.' 
+---
+= Présentation du réseau pour NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La mise en réseau pour NetApp Copy and Sync inclut la connectivité entre le groupe de courtiers de données et les emplacements source et cible, ainsi qu'une connexion Internet sortante des courtiers de données via le port 443.
+
+
+
+== Localisation du courtier en données
+
+Un groupe de courtiers en données se compose d'un ou plusieurs courtiers en données installés dans le cloud ou dans vos locaux.
+
+
+
+=== Courtier de données dans le cloud
+
+L'image suivante montre un courtier de données exécuté dans le cloud, dans AWS, Google Cloud ou Azure.  La source et la cible peuvent se trouver à n’importe quel endroit, à condition qu’il existe une connexion au courtier de données.  Par exemple, vous pouvez disposer d’une connexion VPN entre votre centre de données et votre fournisseur de cloud.
+
+
+NOTE: Lorsque Copy and Sync déploie le courtier de données dans AWS, Azure ou Google Cloud, il crée un groupe de sécurité qui active la communication sortante requise.
+
+image:diagram_networking_cloud2.png["Un diagramme qui montre la copie et la synchronisation, le courtier de données exécuté dans le cloud et les connexions à la source et à la cible."]
+
+
+
+=== Courtier de données dans vos locaux
+
+L’image suivante montre le courtier de données exécuté sur site dans un centre de données.  Encore une fois, la source et la cible peuvent être situées à n’importe quel endroit, à condition qu’il existe une connexion au courtier de données.
+
+image:diagram_networking_onprem.png["Un diagramme qui montre la copie et la synchronisation, le courtier de données exécuté sur site et les connexions à la source et à la cible."]
+
+
+
+== Exigences de mise en réseau
+
+* La source et la cible doivent disposer d'une connexion réseau au groupe de courtiers de données.
++
+Par exemple, si un serveur NFS se trouve dans votre centre de données et qu'un courtier de données se trouve dans AWS, vous avez besoin d'une connexion réseau (VPN ou Direct Connect) de votre réseau au VPC.
+
+* Un courtier de données a besoin d'une connexion Internet sortante pour pouvoir interroger Copy and Sync pour les tâches sur le port 443.
+* NetApp recommande de configurer les courtiers source, cible et de données pour utiliser un service NTP (Network Time Protocol).  La différence de temps entre les trois composants ne doit pas dépasser 5 minutes.
+
+
+
+
+== Points de terminaison réseau
+
+Le courtier de données NetApp nécessite un accès Internet sortant via le port 443 pour communiquer avec Copy and Sync et pour contacter quelques autres services et référentiels.  Votre navigateur Web local nécessite également l’accès aux points de terminaison pour certaines actions.  Si vous devez limiter la connectivité sortante, reportez-vous à la liste de points de terminaison suivante lors de la configuration de votre pare-feu pour le trafic sortant.
+
+
+
+=== Points de terminaison du courtier en données
+
+Un courtier en données contacte les points de terminaison suivants :
+
+[cols="38,62"]
+|===
+| Points de terminaison | But 
+
+
+| \ https://olcentgbl.trafficmanager.net | Pour contacter un référentiel pour mettre à jour les packages CentOS pour l'hôte du courtier de données.  Ce point de terminaison est contacté uniquement si vous installez manuellement le courtier de données sur un hôte CentOS. 
+
+
+| \ https://rpm.nodesource.com \ https://registry.npmjs.org \ https://nodejs.org: | Pour contacter les référentiels pour la mise à jour de Node.js, npm et d'autres packages tiers utilisés dans le développement. 
+
+
+| \ https://tgz.pm2.io | Pour accéder à un référentiel pour la mise à jour de PM2, qui est un package tiers utilisé pour surveiller la copie et la synchronisation. 
+
+
+| \ https://sqs.us-east-1.amazonaws.com \ https://kinesis.us-east-1.amazonaws.com | Pour contacter les services AWS que Copy and Sync utilise pour les opérations (mise en file d'attente des fichiers, enregistrement des actions et livraison des mises à jour au courtier de données). 
+
+
+| \ https://s3._region_.amazonaws.com Par exemple : s3.us-east-2.amazonaws.com:443https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region["Consultez la documentation AWS pour obtenir la liste des points de terminaison S3."^] | Pour contacter Amazon S3 lorsqu’une relation de synchronisation inclut un compartiment S3. 
+
+
+| \ https://s3.amazonaws.com/ | Lorsque vous téléchargez les journaux du courtier de données à partir de Copy and Sync, le courtier de données compresse son répertoire de journaux et télécharge les journaux dans un compartiment S3 prédéfini dans la région us-east-1. 
+
+
+| \ https://storage.googleapis.com/ | Pour contacter Google Cloud lorsqu'une relation de synchronisation utilise un bucket GCP. 
+
+
+| https://_storage-account_.blob.core.windows.net[]Si vous utilisez Azure Data Lake Gen2 :https://_storage-account_.dfs.core.windows.net[] Où _storage-account_ est le compte de stockage source de l'utilisateur. | Pour ouvrir le proxy vers l’adresse du compte de stockage Azure d’un utilisateur. 
+
+
+| \ https://cf.cloudsync.netapp.com \ https://repo.cloudsync.netapp.com | Pour contacter Copy and Sync. 
+
+
+| \ https://support.netapp.com | Pour contacter le support NetApp lors de l'utilisation d'une licence BYOL pour les relations de synchronisation. 
+
+
+| \ https://fedoraproject.org | Pour installer 7z sur la machine virtuelle du courtier de données pendant l'installation et les mises à jour.  7z est nécessaire pour envoyer des messages AutoSupport au support technique NetApp . 
+
+
+| \ https://sts.amazonaws.com \ https://sts.us-east-1.amazonaws.com | Pour vérifier les informations d'identification AWS lorsque le courtier de données est déployé dans AWS ou lorsqu'il est déployé dans vos locaux et que les informations d'identification AWS sont fournies.  Le courtier de données contacte ce point de terminaison pendant le déploiement, lorsqu'il est mis à jour et lorsqu'il est redémarré. 
+
+
+| \ https://api.bluexp.netapp.com \ https://netapp-cloud-account.auth0.com | Pour contacter NetApp Data Classification lorsque vous utilisez la classification pour sélectionner les fichiers sources pour une nouvelle relation de synchronisation. 
+
+
+| \ https://pubsub.googleapis.com | Si vous créez une relation de synchronisation continue à partir d'un compte de stockage Google. 
+
+
+| https://_storage-account_.queue.core.windows.net[]\ https://management.azure.com/subscriptions/ ${_subscriptionId_} /resourceGroups/${_resourceGroup_}/providers/Microsoft.EventGrid/* Où _storage-account_ est le compte de stockage source de l'utilisateur, _subscriptionid_ est l'ID d'abonnement source et _resourceGroup_ est le groupe de ressources source. | Si vous créez une relation de synchronisation continue à partir d’un compte de stockage Azure. 
+|===
+
+
+=== Points de terminaison du navigateur Web
+
+Votre navigateur Web doit accéder au point de terminaison suivant pour télécharger les journaux à des fins de dépannage :
+
+logs.cloudsync.netapp.com:443

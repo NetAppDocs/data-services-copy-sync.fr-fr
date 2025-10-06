@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: task-login-copyandsync.html 
+keywords: copy and sync, NetApp Copy and Sync, log in to Copy and Sync, NetApp BlueXP, BlueXP Copy and Sync, NetApp Console 
+summary: Utilisez la console NetApp pour vous connecter à NetApp Copy and Sync. 
+---
+= Connectez-vous à NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilisez la console NetApp pour vous connecter à NetApp Copy and Sync.
+
+Pour vous connecter à la console, vous pouvez utiliser vos informations d'identification du site de support NetApp ou vous inscrire pour une connexion au cloud NetApp à l'aide de votre e-mail et d'un mot de passe. https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["En savoir plus sur la connexion"^] .
+
+NetApp Copy and Sync utilise la gestion des accès aux identités pour régir l'accès de chaque utilisateur à des actions spécifiques.
+
+*Rôle de console NetApp requis* Rôle d'administrateur d'organisation. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["En savoir plus sur les rôles d'accès à la console NetApp"^] .
+
+.Étapes
+. Ouvrez un navigateur Web et accédez à la https://console.netapp.com/["Console NetApp"^] .
++
+La page de connexion à la console NetApp s’affiche.
+
+. Connectez-vous à la console.
+. Dans la navigation de gauche de la console, sélectionnez *Mobilité* > *Copier et synchroniser*.
+

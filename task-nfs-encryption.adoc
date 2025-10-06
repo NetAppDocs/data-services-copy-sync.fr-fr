@@ -1,0 +1,139 @@
+---
+sidebar: sidebar 
+permalink: task-nfs-encryption.html 
+keywords: encryption, in flight, data in flight, in-flight, data-in-flight, nfs, initiator, listener, port 
+summary: Si votre entreprise dispose de politiques de sécurité strictes, synchronisez les données entre les serveurs NFS de différents réseaux à l’aide du chiffrement des données en cours de transmission. 
+---
+= Synchronisez les données NFS à l'aide du chiffrement des données en vol dans NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si votre entreprise dispose de politiques de sécurité strictes, vous pouvez synchroniser les données NFS à l’aide du chiffrement des données en cours de vol dans NetApp Copy and Sync.  Cette fonctionnalité est prise en charge d’un serveur NFS vers un autre serveur NFS et d’ Azure NetApp Files vers Azure NetApp Files.
+
+Par exemple, vous souhaiterez peut-être synchroniser des données entre deux serveurs NFS situés sur des réseaux différents.  Ou vous devrez peut-être transférer en toute sécurité des données sur Azure NetApp Files entre des sous-réseaux ou des régions.
+
+
+
+== Comment fonctionne le cryptage des données en vol
+
+Le chiffrement des données en vol crypte les données NFS lorsqu'elles sont envoyées sur le réseau entre deux courtiers de données.  L'image suivante montre une relation entre deux serveurs NFS et deux courtiers de données :
+
+image:diagram_nfs_encryption.gif["Un diagramme qui montre deux serveurs NFS et deux courtiers de données.  Les données circulent du serveur NFS source vers un courtier de données source, à partir duquel les données sont chiffrées.  Les données sont ensuite envoyées au courtier de données cible, puis au serveur NFS cible."]
+
+Un courtier de données fonctionne comme _initiateur_.  Lorsqu'il est temps de synchroniser les données, il envoie une demande de connexion à l'autre courtier de données, qui est le _listener_.  Ce courtier de données écoute les requêtes sur le port 443.  Vous pouvez utiliser un port différent, si nécessaire, mais assurez-vous de vérifier que le port n'est pas utilisé par un autre service.
+
+Par exemple, si vous synchronisez des données d’un serveur NFS local vers un serveur NFS basé sur le cloud, vous pouvez choisir quel courtier de données écoute les demandes de connexion et lequel les envoie.
+
+Voici comment fonctionne le cryptage en vol :
+
+. Une fois la relation de synchronisation créée, l’initiateur démarre une connexion chiffrée avec l’autre courtier de données.
+. Le courtier de données source crypte les données de la source à l'aide de TLS 1.3.
+. Il envoie ensuite les données sur le réseau au courtier de données cible.
+. Le courtier de données cible décrypte les données avant de les envoyer à la cible.
+. Après la copie initiale, Copier et synchroniser synchronise toutes les données modifiées toutes les 24 heures.  S'il y a des données à synchroniser, le processus démarre avec l'initiateur ouvrant une connexion cryptée avec l'autre courtier de données.
++
+Si vous préférez synchroniser les données plus fréquemment,link:task-managing-relationships.html#change-the-settings-for-a-sync-relationship["vous pouvez modifier le calendrier après avoir créé la relation"] .
+
+
+
+
+
+== Versions NFS prises en charge
+
+* Pour les serveurs NFS, le chiffrement des données en vol est pris en charge avec les versions NFS 3, 4.0, 4.1 et 4.2.
+* Pour Azure NetApp Files, le chiffrement des données en cours de vol est pris en charge avec les versions NFS 3 et 4.1.
+
+
+
+
+== Limitation du serveur proxy
+
+Si vous créez une relation de synchronisation chiffrée, les données chiffrées sont envoyées via HTTPS et ne sont pas routables via un serveur proxy.
+
+
+
+== Ce dont vous aurez besoin pour commencer
+
+Assurez-vous d'avoir les éléments suivants :
+
+* Deux serveurs NFS qui se rencontrentlink:reference-requirements.html["exigences de la source et de la cible"] ou Azure NetApp Files dans deux sous-réseaux ou régions.
+* Les adresses IP ou les noms de domaine complets des serveurs.
+* Emplacements réseau pour deux courtiers en données.
++
+Vous pouvez sélectionner un courtier de données existant, mais il doit fonctionner comme initiateur.  Le courtier de données d'écoute doit être un _nouveau_ courtier de données.
+
++
+Si vous souhaitez utiliser un groupe de courtiers de données existant, le groupe ne doit avoir qu'un seul courtier de données.  Plusieurs courtiers de données dans un groupe ne sont pas pris en charge avec les relations de synchronisation chiffrées.
+
++
+Si vous n’avez pas encore déployé de courtier de données, consultez les exigences du courtier de données.  Étant donné que vous avez des politiques de sécurité strictes, assurez-vous de vérifier les exigences réseau, qui incluent le trafic sortant du port 443 et lelink:reference-networking.html["points de terminaison Internet"] que le courtier en données contacte.
+
++
+** link:task-installing-aws.html["Examen de l'installation d'AWS"]
+** link:task-installing-azure.html["Examen de l'installation d'Azure"]
+** link:task-installing-gcp.html["Examen de l'installation de Google Cloud"]
+** link:task-installing-linux.html["Examen de l'installation de l'hôte Linux"]
+
+
+
+
+
+
+== Synchroniser les données NFS à l'aide du chiffrement des données en vol
+
+Créez une nouvelle relation de synchronisation entre deux serveurs NFS ou entre Azure NetApp Files, activez l’option de chiffrement en vol et suivez les invites.
+
+.Étapes
+. link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
+. Sélectionnez *Créer une nouvelle synchronisation*.
+. Faites glisser et déposez *Serveur NFS* vers les emplacements source et cible ou * Azure NetApp Files* vers les emplacements source et cible et sélectionnez *Oui* pour activer le chiffrement des données en cours de vol.
+. Suivez les instructions pour créer la relation :
++
+.. *Serveur NFS*/* Azure NetApp Files*: Choisissez la version NFS, puis spécifiez une nouvelle source NFS ou sélectionnez un serveur existant.
+.. *Définir la fonctionnalité du courtier de données* : définissez quel courtier de données _écoute_ les demandes de connexion sur un port et lequel _initie_ la connexion.  Faites votre choix en fonction de vos besoins réseau.
+.. *Courtier de données* : suivez les instructions pour ajouter un nouveau courtier de données source ou sélectionnez un courtier de données existant.
++
+Notez ce qui suit :
+
++
+*** Si vous souhaitez utiliser un groupe de courtiers de données existant, le groupe ne doit avoir qu'un seul courtier de données.  Plusieurs courtiers de données dans un groupe ne sont pas pris en charge avec les relations de synchronisation chiffrées.
+*** Si le courtier de données source agit en tant qu'auditeur, il doit alors s'agir d'un nouveau courtier de données.
+*** Si vous avez besoin d'un nouveau courtier de données, Copy and Sync vous propose les instructions d'installation.  Vous pouvez déployer le courtier de données dans le cloud ou télécharger un script d'installation pour votre propre hôte Linux.
+
+
+.. *Répertoires* : Choisissez les répertoires que vous souhaitez synchroniser en sélectionnant tous les répertoires ou en explorant et en sélectionnant un sous-répertoire.
++
+Sélectionnez *Filtrer les objets source* pour modifier les paramètres qui définissent la manière dont les fichiers et dossiers sources sont synchronisés et conservés dans l'emplacement cible.
+
++
+image:screenshot_directories.gif["Une capture d'écran montrant l'option permettant de sélectionner un répertoire de niveau supérieur, d'effectuer un zoom avant et de sélectionner l'option Filtrer les objets source."]
+
+.. *Serveur NFS cible*/*Cible Azure NetApp Files*: Choisissez la version NFS, puis entrez une nouvelle cible NFS ou sélectionnez un serveur existant.
+.. *Courtier de données cible* : suivez les instructions pour ajouter un nouveau courtier de données source ou sélectionnez un courtier de données existant.
++
+Si le courtier de données cible agit en tant qu'auditeur, il doit alors s'agir d'un nouveau courtier de données.
+
++
+Voici un exemple d’invite lorsque le courtier de données cible fonctionne comme écouteur.  Notez l’option permettant de spécifier le port.
+
++
+image:screenshot_nfs_encryption_listener.gif["Une capture d'écran montrant l'option permettant de spécifier un port sur le courtier de données d'écoute."]
+
+.. *Répertoires cibles* : sélectionnez un répertoire de niveau supérieur ou effectuez une exploration en profondeur pour sélectionner un sous-répertoire existant ou pour créer un nouveau dossier dans une exportation.
+.. *Paramètres*: Définissez comment les fichiers et dossiers sources sont synchronisés et conservés dans l'emplacement cible.
+.. *Révision* : Vérifiez les détails de la relation de synchronisation, puis sélectionnez *Créer une relation*.
++
+image:screenshot_nfs_encryption_review.gif["Une capture d'écran montrant l'écran de révision.  Il affiche les serveurs NFS, les courtiers de données et les informations réseau sur chacun d'eux."]
+
+
+
+
+
+.Résultat
+Copier et synchroniser commence à créer la nouvelle relation de synchronisation.  Une fois terminé, sélectionnez *Afficher dans le tableau de bord* pour afficher les détails de la nouvelle relation.

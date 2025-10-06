@@ -1,0 +1,324 @@
+---
+sidebar: sidebar 
+permalink: reference-supported-relationships.html 
+keywords: supported sync relationships, support, supported target, supported source 
+summary: 'NetApp Copy and Sync vous permet de synchroniser les données d"une source vers une cible.  C"est ce qu"on appelle une relation de synchronisation.  Vous devez comprendre les relations prises en charge avant de commencer.' 
+---
+= Relations de synchronisation prises en charge dans NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync vous permet de synchroniser les données d'une source vers une cible.  C'est ce qu'on appelle une relation de synchronisation.  Vous devez comprendre les relations prises en charge avant de commencer.
+
+[cols="20,25"]
+|===
+| Localisation de la source | Emplacements cibles pris en charge 
+
+
+| Amazon EFS  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Amazon FSx pour ONTAP  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Amazon S3  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Boîte ^1^
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* Stockage ONTAP S3
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Azure Blob  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Stockage Azure Data Lake Gen2  a| 
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* FSx pour ONTAP
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* ONTAP sur site
+* Stockage ONTAP S3
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Azure NetApp Files  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Boîte ^1^  a| 
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Cloud Volumes ONTAP  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Stockage Google Cloud  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* Stockage ONTAP S3
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Google Drive  a| 
+* serveur NFS
+* serveur SMB
+
+
+
+
+| Stockage d'objets IBM Cloud  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Boîte ^1^
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* serveur SMB
+* StorageGRID
+
+
+
+
+| serveur NFS  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Google Drive
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* Stockage ONTAP S3
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Cluster ONTAP sur site (NFS ou SMB)  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* serveur SMB
+* StorageGRID
+
+
+
+
+| Stockage ONTAP S3  a| 
+* Amazon S3
+* Stockage Azure Data Lake Gen2
+* Stockage Google Cloud
+* serveur NFS
+* serveur SMB
+* StorageGRID
+* Stockage ONTAP S3
+
+
+
+
+| SFTP ^2^ | S3 
+
+
+| serveur SMB  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Google Drive
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* Stockage ONTAP S3
+* serveur SMB
+* StorageGRID
+
+
+
+
+| StorageGRID  a| 
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Boîte ^1^
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* serveur NFS
+* Cluster ONTAP sur site (NFS ou SMB)
+* Stockage ONTAP S3
+* serveur SMB
+* StorageGRID
+
+
+|===
+Remarques :
+
+. Le support Box est disponible en avant-première.
+. Les relations de synchronisation avec cette source/cible sont prises en charge uniquement à l'aide de l'API Copier et synchroniser.
+. Vous pouvez choisir un niveau de stockage Azure Blob spécifique lorsqu'un conteneur Blob est la cible :
++
+** Stockage à chaud
+** Stockage au frais
+
+
+. [[storage-classes]]Vous pouvez choisir une classe de stockage S3 spécifique lorsque Amazon S3 est la cible :
++
+** Standard (c'est la classe par défaut)
+** Hiérarchisation intelligente
+** Accès standard-peu fréquent
+** Une zone - Accès peu fréquent
+** Archives des profondeurs des glaciers
+** Récupération flexible des glaciers
+** Récupération instantanée du glacier
+
+
+. Vous pouvez choisir une classe de stockage spécifique lorsqu'un bucket Google Cloud Storage est la cible :
++
+** Standard
+** Nearline
+** Coldline
+** Archive
+
+
+

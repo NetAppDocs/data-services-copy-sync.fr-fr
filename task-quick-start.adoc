@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start.html 
+keywords: quick start, overview, deploying, getting started, get started, signing up, free trial 
+summary: La mise en route de NetApp Copy and Sync comprend quelques étapes. 
+---
+= Démarrage rapide pour NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La mise en route de NetApp Copy and Sync comprend quelques étapes.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]Connectez-vous et configurez la console NetApp
+[role="quick-margin-para"]
+Vous devriez avoir commencé à utiliser la console NetApp , ce qui inclut la connexion, la configuration d’un compte et éventuellement le déploiement d’un agent de console et la création de systèmes.
+
+[role="quick-margin-para"]
+Si vous souhaitez créer des relations de synchronisation pour l’un des éléments suivants, vous devez d’abord créer ou découvrir un système :
+
+[role="quick-margin-list"]
+* Amazon FSx pour ONTAP
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Clusters ONTAP sur site
+
+
+[role="quick-margin-para"]
+Un agent de console est requis pour Cloud Volumes ONTAP, les clusters ONTAP sur site et Amazon FSx for ONTAP.
+
+[role="quick-margin-list"]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Découvrez comment démarrer avec la console NetApp"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["En savoir plus sur les agents de console"^]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"]Préparez votre source et votre cible
+[role="quick-margin-para"]
+Vérifiez que votre source et votre cible sont prises en charge et configurées.  L’exigence la plus importante est de vérifier la connectivité entre le groupe de courtiers de données et les emplacements source et cible.
+
+[role="quick-margin-list"]
+* link:reference-supported-relationships.html["Afficher les relations prises en charge"]
+* link:reference-requirements.html["Préparez la source et la cible"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"]Préparez un emplacement pour le courtier de données NetApp
+[role="quick-margin-para"]
+Le logiciel de courtier de données NetApp synchronise les données d'une source vers une cible (c'est ce qu'on appelle une _relation de synchronisation_).  Vous pouvez exécuter le courtier de données dans AWS, Azure, Google Cloud Platform ou dans vos locaux.  Un groupe de courtiers de données, composé d'un ou de plusieurs courtiers de données, a besoin d'une connexion Internet sortante sur le port 443 pour pouvoir communiquer avec NetApp Copy and Sync et contacter quelques autres services et référentiels. link:reference-networking.html#networking-endpoints["Afficher la liste des points de terminaison"] .
+
+[role="quick-margin-para"]
+NetApp Copy and Sync vous guide tout au long du processus d'installation lorsque vous créez une relation de synchronisation, à partir de laquelle vous pouvez déployer un courtier de données dans le cloud ou télécharger un script d'installation pour votre propre hôte Linux.
+
+[role="quick-margin-list"]
+* link:task-installing-aws.html["Examen de l'installation d'AWS"]
+* link:task-installing-azure.html["Examen de l'installation d'Azure"]
+* link:task-installing-gcp.html["Examen de l'installation de Google Cloud"]
+* link:task-installing-linux.html["Examen de l'installation de l'hôte Linux"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"]Créez votre première relation de synchronisation
+[role="quick-margin-para"]
+Connectez-vous à https://console.netapp.com/["la console NetApp"^] , sélectionnez *Synchroniser*, puis faites glisser et déposez vos sélections pour la source et la cible.  Suivez les instructions pour terminer la configuration. link:task-creating-relationships.html["Apprendre encore plus"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"]Payez vos relations de synchronisation après la fin de votre essai gratuit
+[role="quick-margin-para"]
+Abonnez-vous à AWS ou Azure pour payer à l'utilisation ou annuellement.  Ou achetez des licences directement auprès de NetApp.  Accédez simplement à la page Paramètres de licence dans NetApp Copy and Sync pour le configurer. link:task-licensing.html["Apprendre encore plus"] .

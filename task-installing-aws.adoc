@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: task-installing-aws.html 
+keywords: data broker, install, aws, networking, permissions, regions, install data broker in aws, install in aws, deploy in aws, deploy data broker in aws, cft, template, iam role, use your own iam role, regions, supported regions, networking requirements, port, ports, 443, port 443, ntp, network time protocol, permissions, iam role, iam permissions, aws data broker 
+summary: 'Lorsque vous créez un nouveau courtier de données, choisissez l’option AWS Data Broker pour déployer le logiciel de courtier de données sur une nouvelle instance EC2 dans un VPC.  NetApp Copy and Sync vous guide tout au long du processus d"installation, mais les exigences et les étapes sont répétées sur cette page pour vous aider à préparer l"installation.' 
+---
+= Créer un nouveau courtier de données dans AWS pour NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous créez un nouveau groupe de courtiers de données pour NetApp Copy and Sync, choisissez Amazon Web Services pour déployer le logiciel de courtier de données sur une nouvelle instance EC2 dans un VPC.  NetApp Copy and Sync vous guide tout au long du processus d'installation, mais les exigences et les étapes sont répétées sur cette page pour vous aider à préparer l'installation.
+
+Vous avez également la possibilité d'installer le courtier de données sur un hôte Linux existant dans le cloud ou dans vos locaux. link:task-installing-linux.html["Apprendre encore plus"] .
+
+
+
+== Régions AWS prises en charge
+
+Toutes les régions sont prises en charge, à l'exception des régions de Chine.
+
+
+
+== Privilèges root
+
+Le logiciel de courtage de données s'exécute automatiquement en tant que root sur l'hôte Linux.  L'exécution en tant que root est une exigence pour les opérations de courtier en données.  Par exemple, pour monter des actions.
+
+
+
+== Exigences de mise en réseau
+
+* Le courtier de données a besoin d'une connexion Internet sortante pour pouvoir interroger Copy and Sync pour les tâches sur le port 443.
++
+Lorsque Copy and Sync déploie le courtier de données dans AWS, il crée un groupe de sécurité qui active la communication sortante requise.  Notez que vous pouvez configurer le courtier de données pour utiliser un serveur proxy pendant le processus d'installation.
+
++
+Si vous devez limiter la connectivité sortante, consultezlink:reference-networking.html["la liste des points de terminaison contactés par le courtier de données"] .
+
+* NetApp recommande de configurer la source, la cible et le courtier de données pour utiliser un service NTP (Network Time Protocol).  La différence de temps entre les trois composants ne doit pas dépasser 5 minutes.
+
+
+
+
+== Autorisations requises pour déployer le courtier de données dans AWS
+
+Le compte utilisateur AWS que vous utilisez pour déployer le courtier de données doit disposer des autorisations incluses dans https://s3.amazonaws.com/metadata.datafabric.io/docs/aws_iam_policy.json["cette politique fournie par NetApp"^] .
+
+
+
+== [[iam]]Conditions requises pour utiliser votre propre rôle IAM avec le courtier de données AWS
+
+Lorsque Copy and Sync déploie le courtier de données, il crée un rôle IAM pour l'instance du courtier de données. Vous pouvez déployer le courtier de données à l’aide de votre propre rôle IAM, si vous préférez.  Vous pouvez utiliser cette option si votre organisation dispose de politiques de sécurité strictes.
+
+Le rôle IAM doit répondre aux exigences suivantes :
+
+* Le service EC2 doit être autorisé à assumer le rôle IAM en tant qu’entité approuvée.
+* link:media/aws_iam_policy_data_broker.json["Les autorisations définies dans ce fichier JSON"^]doit être attaché au rôle IAM pour que le courtier de données puisse fonctionner correctement.
+
+
+Suivez les étapes ci-dessous pour spécifier le rôle IAM lors du déploiement du courtier de données.
+
+
+
+== Créer le courtier de données
+
+Il existe plusieurs façons de créer un nouveau courtier de données.  Ces étapes décrivent comment installer un courtier de données dans AWS lors de la création d’une relation de synchronisation.
+
+.Étapes
+. link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
+. Sélectionnez *Créer une nouvelle synchronisation*.
+. Sur la page *Définir la relation de synchronisation*, choisissez une source et une cible et sélectionnez *Continuer*.
++
+Suivez les étapes jusqu'à atteindre la page *Data Broker Group*.
+
+. Sur la page *Groupe de courtiers de données*, sélectionnez *Créer un courtier de données*, puis sélectionnez *Amazon Web Services*.
++
+image:screenshot-aws.png["Une capture d’écran de la page Data Broker qui vous permet de choisir entre un courtier de données AWS, Azure, Google Cloud et On-Prem."]
+
+. Saisissez un nom pour le courtier de données et sélectionnez *Continuer*.
+. Saisissez une clé d’accès AWS afin que Copy and Sync puisse créer le courtier de données dans AWS en votre nom.
++
+Les clés ne sont pas enregistrées ni utilisées à d’autres fins.
+
++
+Si vous préférez ne pas fournir de clés d'accès, sélectionnez le lien en bas de la page pour utiliser un modèle CloudFormation à la place.  Lorsque vous utilisez cette option, vous n’avez pas besoin de fournir d’informations d’identification car vous vous connectez directement à AWS.
+
++
+[[cft]]La vidéo suivante montre comment lancer l'instance du courtier de données à l'aide d'un modèle CloudFormation :
+
++
+.Lancer un courtier de données à partir d'un modèle AWS CloudFormation
+video::abaf0898-ea15-4f84-938e-b24c010b21e8[panopto]
+. Si vous avez saisi une clé d'accès AWS, sélectionnez un emplacement pour l'instance, sélectionnez une paire de clés, choisissez d'activer ou non une adresse IP publique et sélectionnez un rôle IAM existant, ou laissez le champ vide pour que Copy and Sync crée le rôle pour vous.  Vous avez également la possibilité de crypter votre courtier de données à l'aide d'une clé KMS.
++
+Si vous choisissez votre propre rôle IAM,<<iam,vous devrez fournir les autorisations requises>> .
+
++
+image:screenshot_aws_data_broker.png["Une capture d’écran des informations que vous devez fournir lors du déploiement d’un courtier de données dans AWS."]
+
+. Spécifiez une configuration de proxy, si un proxy est requis pour l'accès Internet dans le VPC.
+. Une fois le courtier de données disponible, sélectionnez *Continuer* dans Copier et synchroniser.
++
+L'image suivante montre une instance déployée avec succès dans AWS :
+
++
+image:screenshot-data-broker-group-selected.png["Cette capture d’écran montre une instance déployée avec succès.  L'interface affiche des détails sur l'instance, y compris la mise en réseau AWS."]
+
+. Complétez les pages de l’assistant pour créer la nouvelle relation de synchronisation.
+
+
+.Résultat
+Vous avez déployé un courtier de données dans AWS et créé une nouvelle relation de synchronisation.  Vous pouvez utiliser ce groupe de courtiers de données avec des relations de synchronisation supplémentaires.
+
+
+
+== Détails sur l'instance du courtier de données
+
+Copy and Sync crée un courtier de données dans AWS à l’aide de la configuration suivante.
+
+Compatibilité Node.js:: v21.2.0
+Type d'instance:: m5n.xlarge lorsqu'il est disponible dans la région, sinon m5.xlarge
+vCPU:: 4
+BÉLIER:: 16 GB
+Système opérateur:: Amazon Linux 2023
+Taille et type de disque:: SSD GP2 de 10 Go
+

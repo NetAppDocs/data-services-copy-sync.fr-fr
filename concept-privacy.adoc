@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: concept-privacy.html 
+keywords: privacy, data privacy, credentials, access to credentials, hashicorp vault 
+summary: 'NetApp n"a accès à aucune information d"identification que vous fournissez lors de l"utilisation de NetApp Copy and Sync.  Les informations d’identification sont stockées directement sur la machine du courtier de données, qui réside sur votre réseau.' 
+---
+= Confidentialité des données dans NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp n'a accès à aucune information d'identification que vous fournissez lors de l'utilisation de NetApp Copy and Sync.  Les informations d’identification sont stockées directement sur la machine du courtier de données, qui réside sur votre réseau.
+
+Selon la configuration que vous choisissez, Copier et synchroniser peut vous demander des informations d'identification lorsque vous créez une nouvelle relation.  Par exemple, lors de la configuration d’une relation qui inclut un serveur SMB ou lors du déploiement du courtier de données dans AWS.
+
+Ces informations d’identification sont toujours enregistrées directement dans le courtier de données lui-même.  Le courtier de données réside sur une machine de votre réseau, qu'elle soit sur site ou dans votre compte cloud.  Les informations d’identification ne sont jamais mises à la disposition de NetApp.
+
+Les informations d'identification sont cryptées localement sur la machine du courtier de données à l'aide de HashiCorp Vault.

@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: task-prepare-object-storage.html 
+keywords: prepare data broker, data broker, object storage, sync, scanner, configure scanner, bluexp, copy and sync 
+summary: 'Si vous prévoyez de synchroniser des données d"un stockage d"objets vers un autre (par exemple, Amazon S3 vers Azure Blob) à l"aide de NetApp Copy and Sync, vous devez préparer le groupe de courtiers de données avant de créer la relation de synchronisation.' 
+---
+= Préparez un courtier de données pour synchroniser les données entre le stockage d'objets dans NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous prévoyez de synchroniser des données d'un stockage d'objets vers un stockage d'objets (par exemple, Amazon S3 vers Azure Blob) dans NetApp Copy and Sync, vous devez préparer le groupe de courtiers de données avant de créer la relation de synchronisation.
+
+.À propos de cette tâche
+Pour préparer le groupe de courtiers de données, vous devrez modifier la configuration du scanner.  Si vous ne modifiez pas la configuration, vous remarquerez peut-être des problèmes de performances pour cette relation de synchronisation.
+
+.Avant de commencer
+Le groupe de courtiers de données que vous utilisez pour synchroniser les données d'un stockage d'objets à un autre doit uniquement gérer ces types de relations de synchronisation.  Si le groupe de courtiers de données gère un type différent de relation de synchronisation (par exemple, NFS vers NFS ou stockage d'objets vers SMB), les performances de ces relations de synchronisation peuvent être affectées négativement.
+
+.Étapes
+. link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
+. Depuis Copier et synchroniser, sélectionnez *Gérer les courtiers de données*.
+. Sélectionnerimage:icon-settings.png["Une capture d'écran de l'icône des paramètres"]
+. Mettre à jour la configuration du scanner :
++
+.. Changez *Scanner Concurrency* sur *1*.
+.. Modifiez *Limite des processus du scanner* à *1*.
+
+
+. Sélectionnez *Unifier la configuration*.
+
+
+.Résultat
+La copie et la synchronisation mettent à jour la configuration du groupe de courtiers de données.
+
+.Quelle est la prochaine étape ?
+Vous pouvez désormais créer la relation de synchronisation entre le stockage d’objets à l’aide du groupe de courtiers de données que vous venez de configurer.

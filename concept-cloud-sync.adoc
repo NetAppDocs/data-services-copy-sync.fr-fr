@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: concept-cloud-sync.html 
+keywords: NetApp Copy and Sync, overview, conceptual, how, data broker, service, cloudsync, bluexp, copy and sync 
+summary: 'NetApp Copy and Sync offre un moyen simple, sécurisé et automatisé de migrer vos données vers n"importe quelle cible, dans le cloud ou sur vos locaux.' 
+---
+= En savoir plus sur NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Copy and Sync offre un moyen simple, sécurisé et automatisé de migrer vos données vers n'importe quelle cible, dans le cloud ou sur vos locaux.  Qu'il s'agisse d'un ensemble de données NAS basé sur des fichiers (NFS ou SMB), d'un format d'objet Amazon Simple Storage Service (S3), d'une appliance NetApp StorageGRID ou de tout autre magasin d'objets de fournisseur de cloud, Copy and Sync peut le convertir et le déplacer pour vous.
+
+
+
+== Console NetApp
+
+NetApp Copy and Sync est accessible via la console NetApp .
+
+La console NetApp fournit une gestion centralisée des services de stockage et de données NetApp dans les environnements sur site et cloud à l'échelle de l'entreprise. La console est requise pour accéder aux services de données NetApp et les utiliser. En tant qu'interface de gestion, il vous permet de gérer de nombreuses ressources de stockage à partir d'une seule interface. Les administrateurs de console peuvent contrôler l’accès au stockage et aux services pour tous les systèmes de l’entreprise.
+
+Vous n'avez pas besoin de licence ni d'abonnement pour commencer à utiliser NetApp Console et vous n'encourez des frais que lorsque vous devez déployer des agents de console dans votre cloud pour garantir la connectivité à vos systèmes de stockage ou à vos services de données NetApp . Cependant, certains services de données NetApp accessibles depuis la console sont sous licence ou basés sur un abonnement.
+
+En savoir plus sur le https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Console NetApp"] .
+
+
+
+== Comment fonctionne NetApp Copy and Sync
+
+NetApp Copy and Sync est une plate-forme SaaS (Software-as-a-Service) composée d'un groupe de courtiers en données, d'une interface cloud disponible via la console NetApp , ainsi que d'une source et d'une cible.
+
+L'image suivante montre la relation entre les composants Copy et Sync :
+
+image:diagram_cloud_sync_overview.png["Image conceptuelle qui montre les données circulant d’une source vers une cible.  Le logiciel de courtier en données agit comme médiateur et interroge Copy et Sync pour les tâches."]
+
+Le logiciel de courtier de données NetApp synchronise les données d'une source vers une cible (c'est ce qu'on appelle une _relation de synchronisation_).  Vous pouvez exécuter le courtier de données dans AWS, Azure, Google Cloud Platform ou dans vos locaux.  Un groupe de courtiers de données, composé d'un ou de plusieurs courtiers de données, a besoin d'une connexion Internet sortante sur le port 443 pour pouvoir communiquer avec Copy and Sync et contacter quelques autres services et référentiels. link:reference-networking.html["Afficher la liste des points de terminaison"] .
+
+Après la copie initiale, Copier et synchroniser synchronise toutes les données modifiées en fonction de la planification que vous avez définie.
+
+
+
+== Types de stockage pris en charge
+
+Copy and Sync prend en charge les types de stockage suivants :
+
+* N'importe quel serveur NFS
+* N'importe quel serveur PME
+* Amazon EFS
+* Amazon FSx pour ONTAP
+* Amazon S3
+* Azure Blob
+* Stockage Azure Data Lake Gen2
+* Azure NetApp Files
+* Coffret (disponible en avant-première)
+* Cloud Volumes ONTAP
+* Stockage Google Cloud
+* Google Drive
+* Stockage d'objets IBM Cloud
+* Cluster ONTAP sur site
+* Stockage ONTAP S3
+* SFTP (en utilisant uniquement l'API)
+* StorageGRID
+
+
+link:reference-supported-relationships.html["Afficher les relations de synchronisation prises en charge"] .
+
+
+
+== Frais
+
+Il existe deux types de coûts associés à l’utilisation de Copy and Sync : les frais de ressources et les frais de service.
+
+Frais de ressources:: Les frais de ressources sont liés aux coûts de calcul et de stockage pour l’exécution d’un ou plusieurs courtiers de données dans le cloud.
+Frais de service:: Il existe deux façons de payer les relations de synchronisation après la fin de votre essai gratuit de 14 jours.  La première option consiste à vous abonner auprès d’AWS ou d’Azure, ce qui vous permet de payer à l’heure ou à l’année.  La deuxième option consiste à acheter des licences directement auprès de NetApp.
+
+
+link:concept-licensing.html["Découvrez comment fonctionnent les licences"] .

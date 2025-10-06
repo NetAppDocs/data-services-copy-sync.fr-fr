@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task-managing-reports.html 
+keywords: reports, sync reports, NetApp Copy and Sync reports, report errors, path reports 
+summary: 'Créez et affichez des rapports pour obtenir des informations que vous pouvez utiliser avec l"aide du personnel NetApp pour ajuster la configuration d"un courtier de données et améliorer les performances.' 
+---
+= Créez et affichez des rapports pour optimiser votre configuration dans NetApp Copy and Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Créez et affichez des rapports dans NetApp Copy and Sync pour obtenir des informations que vous pouvez utiliser avec l'aide du personnel NetApp pour optimiser la configuration d'un courtier de données et améliorer les performances.
+
+Chaque rapport fournit des détails détaillés sur un chemin dans une relation de synchronisation.  Il comprendra le nombre de répertoires, de fichiers et de liens symboliques, la distribution de la taille des fichiers, la profondeur et la largeur des répertoires, l'heure de modification et l'heure d'accès.  Cela diffère des statistiques de synchronisation, qui sont disponibles à partir du tableau de bord après https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["créer et terminer avec succès une synchronisation"] .
+
+
+
+== Créer des rapports
+
+Chaque fois que vous créez un rapport, Copy and Sync analyse le chemin, puis compile les détails dans un rapport.
+
+.Étapes
+. link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
+. Sélectionnez *Synchroniser > Rapports*.
++
+Les chemins (source ou cible) dans chacune de vos relations de synchronisation s'affichent dans un tableau.
+
+. Dans la colonne *Actions des rapports*, accédez à un chemin spécifique et sélectionnez *Créer*, ou sélectionnez le menu d'action et sélectionnez *Créer un nouveau*.
+. Lorsque le rapport est prêt, sélectionnez le menu Action et sélectionnez *Afficher*.
++
+Voici un exemple de rapport pour un chemin de système de fichiers.
+
++
+image:screenshot_sync_report.gif["Un rapport qui affiche la quantité d'éléments de synchronisation, la taille du fichier, les maximums, l'heure d'accès, l'heure de modification et l'heure de modification."]
+
++
+Et voici un exemple de rapport pour le stockage d’objets.
+
++
+image:screenshot_sync_report_object.gif["Un rapport qui affiche le nombre d'éléments de chemin, la taille des objets, l'heure de modification et la classe de stockage."]
+
+
+
+
+
+== Télécharger les rapports
+
+Vous pouvez télécharger un rapport au format PDF afin de pouvoir le consulter hors ligne ou le partager.
+
+.Étapes
+. link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
+. Sélectionnez *Synchroniser > Rapports*.
+. Dans la colonne *Actions des rapports*, sélectionnez le menu Action et sélectionnez *Afficher*.
+. En haut à droite du rapport, sélectionnez le menu d'action et sélectionnez *Télécharger le pdf*.
++
+image:screenshot-sync-download-report.png["Une capture d’écran de l’option Télécharger le PDF qui apparaît après avoir sélectionné le menu d’action dans un rapport."]
+
+
+
+
+
+== Afficher les erreurs du rapport
+
+Le tableau Chemins identifie si des erreurs sont présentes dans le rapport le plus récent.  Une erreur identifie un problème rencontré par Copy and Sync lors de l'analyse du chemin.
+
+Par exemple, un rapport peut contenir des erreurs d’autorisation refusée.  Ce type d'erreur peut affecter la capacité de Copy and Sync à analyser l'ensemble des fichiers et répertoires.
+
+Après avoir consulté la liste des erreurs, vous pouvez résoudre les problèmes et exécuter à nouveau le rapport.
+
+.Étapes
+. link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
+. Sélectionnez *Synchroniser > Rapports*.
+. Dans la colonne *Erreurs*, identifiez si des erreurs sont présentes dans un rapport.
+. Si des erreurs sont présentes, sélectionnez la flèche à côté du nombre d’erreurs.
++
+image:screenshot_sync_report_errors.gif["Une capture d'écran du tableau Chemins qui montre le nombre d'erreurs et une petite flèche cliquable dans la colonne Erreurs."]
+
+. Utilisez les informations contenues dans l’erreur pour corriger le problème.
++
+Une fois le problème résolu, l’erreur ne devrait plus apparaître la prochaine fois que vous exécuterez le rapport.
+
+
+
+
+
+== Supprimer les rapports
+
+Vous pouvez supprimer un rapport s'il contient une erreur que vous avez corrigée ou si le rapport est lié à une relation de synchronisation que vous avez supprimée.
+
+.Étapes
+. Sélectionnez *Synchroniser > Rapports*.
+. Dans la colonne *Actions des rapports*, sélectionnez le menu d'action pour un chemin et sélectionnez *Supprimer le dernier rapport* ou *Supprimer tous les rapports*.
+. Confirmez que vous souhaitez supprimer le ou les rapports.
+
