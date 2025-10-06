@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: Documentation sur la copie et la synchronisation NetApp
+  title: Documentation sur la NetApp Copy and Sync
   summary: NetApp Copy and Sync est un service de réplication et de synchronisation
     cloud permettant de transférer des données NAS entre des magasins d'objets sur
     site et dans le cloud.
@@ -27,9 +27,9 @@ indexpage:
       url: task-managing-data-brokers.html
   - title: Blogs et communauté
     links:
-    - title: Console NetApp
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: Services de données NetApp
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: Communauté NetApp
       url: https://community.netapp.com

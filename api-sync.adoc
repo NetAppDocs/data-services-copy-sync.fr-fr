@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: api-sync.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field, box 
-summary: 'Les fonctionnalités de copie et de synchronisation NetApp disponibles via l"interface utilisateur Web sont également disponibles via les API RESTful.' 
+summary: 'Les fonctionnalités de NetApp Copy and Sync disponibles via l"interface utilisateur Web sont également disponibles via les API RESTful.' 
 ---
-= API de copie et de synchronisation NetApp
+= API de NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,16 @@ summary: 'Les fonctionnalités de copie et de synchronisation NetApp disponibles
 
 
 [role="lead"]
-Les fonctionnalités de copie et de synchronisation NetApp disponibles via l'interface utilisateur Web sont également disponibles via l'API RESTful.
+Les fonctionnalités de NetApp Copy and Sync disponibles via l'interface utilisateur Web sont également disponibles via l'API RESTful.
 
 
 
 == Commencer
 
-Pour démarrer avec l’API Copier et synchroniser, vous devez obtenir un jeton utilisateur et votre ID de compte NetApp Console.  Vous devrez ajouter le jeton et l'ID de compte à l'en-tête d'autorisation lors des appels d'API.
+Pour démarrer avec l’API Copier et synchroniser, vous devez obtenir un jeton utilisateur et votre ID de compte NetApp Console .  Vous devrez ajouter le jeton et l'ID de compte à l'en-tête d'autorisation lors des appels d'API.
 
 .Étapes
-. Obtenez un jeton utilisateur à partir de la console NetApp .
+. Obtenez un jeton utilisateur à partir de la NetApp Console.
 +
 [source, http]
 ----
@@ -43,7 +43,7 @@ Body:
 
 NOTE: Si vous utilisez un compte de messagerie personnel sans ID client, vous pouvez utiliser l'ID client par défaut « QC3AgHk6qdbmC7Yyr82ApBwaaJLwRrNO ».
 
-. Obtenez votre ID de compte NetApp Console.
+. Obtenez votre ID de compte NetApp Console .
 +
 [source, http]
 ----
@@ -83,7 +83,7 @@ Body: { "name": "databroker1", "type": "AZURE" }
 
 
 .Quelle est la prochaine étape ?
-Le jeton utilisateur de la console NetApp a une date d’expiration.  Pour actualiser le jeton, vous devez à nouveau appeler l’API à partir de l’étape 1.
+Le jeton utilisateur de la NetApp Console a une date d’expiration.  Pour actualiser le jeton, vous devez à nouveau appeler l’API à partir de l’étape 1.
 
 La réponse de l'API inclut un champ « expires_in » qui indique quand le jeton expire.
 

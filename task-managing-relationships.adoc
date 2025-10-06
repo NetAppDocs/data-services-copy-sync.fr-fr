@@ -90,7 +90,7 @@ La copie et la synchronisation mettent à jour les informations d'identification
 
 Un paramètre *Notifications* pour chaque relation de synchronisation vous permet de choisir de recevoir ou non des notifications de copie et de synchronisation dans le centre de notifications de la console NetApp .  Vous pouvez activer les notifications pour les synchronisations de données réussies, les synchronisations de données ayant échoué et les synchronisations de données annulées.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["Une capture d’écran qui montre le centre de notifications dans la console NetApp ."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["Une capture d’écran qui montre le centre de notifications dans la NetApp Console."]
 
 De plus, vous pouvez également recevoir des notifications par email.
 
@@ -216,7 +216,7 @@ Vous pouvez supprimer une relation de synchronisation si vous n'avez plus besoin
 
 
 
-=== Option 1 : Supprimer une relation de synchronisation unique
+=== Option 1 : Supprimer une seule relation de synchronisation
 
 .Étapes
 . Depuis le *Tableau de bord*, accédez à la relation de synchronisation et sélectionnezimage:icon-sync-action.png["Une capture d'écran du bouton qui vous permet d'effectuer des actions sur une relation de synchronisation"]

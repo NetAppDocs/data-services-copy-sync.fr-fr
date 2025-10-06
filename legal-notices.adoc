@@ -47,4 +47,4 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 Les fichiers d'avis fournissent des informations sur les droits d'auteur et les licences tiers utilisés dans les logiciels NetApp .
 
-link:media/notice_cloud_sync.pdf["Avis concernant la copie et la synchronisation NetApp"^]
+link:media/notice_cloud_sync.pdf["Avis concernant la NetApp Copy and Sync"^]

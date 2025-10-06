@@ -176,7 +176,7 @@ image:screenshot_azure_data_broker.png["Capture d’écran de la page de déploi
 
 +
 
-NOTE: Si vous prévoyez d'implémenter une relation de synchronisation continue, vous devez attribuer un rôle personnalisé à votre courtier de données.  Cela peut également être fait manuellement après la création du courtier.
+NOTE: Si vous prévoyez d’implémenter une relation de synchronisation continue, vous devez attribuer un rôle personnalisé à votre courtier de données.  Cela peut également être fait manuellement après la création du courtier.
 
 . Spécifiez une configuration de proxy, si un proxy est requis pour l'accès Internet dans le réseau virtuel.
 . Sélectionnez *Continuer*. Si vous souhaitez ajouter des autorisations S3 à votre courtier de données, saisissez vos clés d’accès et secrètes AWS.
@@ -218,7 +218,7 @@ Copy and Sync crée un courtier de données dans Azure à l’aide de la configu
 Compatibilité Node.js:: v21.2.0
 Type de VM:: Norme DS4 v2
 vCPU:: 8
-BÉLIER:: 28 Go
+BÉLIER:: 28 GB
 Système opérateur:: Rocky Linux 9,0
 Taille et type de disque:: SSD Premium de 64 Go
 

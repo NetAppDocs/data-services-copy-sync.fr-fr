@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-prepare-object-storage.html 
 keywords: prepare data broker, data broker, object storage, sync, scanner, configure scanner, bluexp, copy and sync 
-summary: 'Si vous prévoyez de synchroniser des données d"un stockage d"objets vers un autre (par exemple, Amazon S3 vers Azure Blob) à l"aide de NetApp Copy and Sync, vous devez préparer le groupe de courtiers de données avant de créer la relation de synchronisation.' 
+summary: 'Si vous prévoyez de synchroniser des données d"un stockage d"objets vers un stockage d"objets (par exemple, Amazon S3 vers Azure Blob) à l"aide de NetApp Copy and Sync, vous devez préparer le groupe de courtiers de données avant de créer la relation de synchronisation.' 
 ---
 = Préparez un courtier de données pour synchroniser les données entre le stockage d'objets dans NetApp Copy and Sync
 :hardbreaks:
@@ -20,7 +20,7 @@ Si vous prévoyez de synchroniser des données d'un stockage d'objets vers un st
 Pour préparer le groupe de courtiers de données, vous devrez modifier la configuration du scanner.  Si vous ne modifiez pas la configuration, vous remarquerez peut-être des problèmes de performances pour cette relation de synchronisation.
 
 .Avant de commencer
-Le groupe de courtiers de données que vous utilisez pour synchroniser les données d'un stockage d'objets à un autre doit uniquement gérer ces types de relations de synchronisation.  Si le groupe de courtiers de données gère un type différent de relation de synchronisation (par exemple, NFS vers NFS ou stockage d'objets vers SMB), les performances de ces relations de synchronisation peuvent être affectées négativement.
+Le groupe de courtiers de données que vous utilisez pour synchroniser les données du stockage d'objets vers le stockage d'objets doit uniquement gérer ces types de relations de synchronisation.  Si le groupe de courtiers de données gère un type différent de relation de synchronisation (par exemple, NFS vers NFS ou stockage d'objets vers SMB), les performances de ces relations de synchronisation peuvent être affectées négativement.
 
 .Étapes
 . link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .

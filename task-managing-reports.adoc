@@ -30,7 +30,7 @@ Chaque fois que vous créez un rapport, Copy and Sync analyse le chemin, puis co
 +
 Les chemins (source ou cible) dans chacune de vos relations de synchronisation s'affichent dans un tableau.
 
-. Dans la colonne *Actions des rapports*, accédez à un chemin spécifique et sélectionnez *Créer*, ou sélectionnez le menu d'action et sélectionnez *Créer un nouveau*.
+. Dans la colonne *Actions des rapports*, accédez à un chemin spécifique et sélectionnez *Créer*, ou sélectionnez le menu d'action et sélectionnez *Créer nouveau*.
 . Lorsque le rapport est prêt, sélectionnez le menu Action et sélectionnez *Afficher*.
 +
 Voici un exemple de rapport pour un chemin de système de fichiers.

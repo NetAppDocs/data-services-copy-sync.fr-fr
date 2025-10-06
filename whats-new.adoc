@@ -22,17 +22,17 @@ Découvrez les nouveautés de NetApp Copy and Sync.
 
 
 
-=== La BlueXP copy and sync sont désormais la copie et la synchronisation NetApp
+=== La BlueXP copy and sync sont désormais la NetApp Copy and Sync
 
-La BlueXP copy and sync ont été renommées en copie et synchronisation NetApp .
+La BlueXP copy and sync ont été renommées en NetApp Copy and Sync.
 
 
 
 === BlueXP est désormais NetApp Console
 
-La console NetApp , construite sur la base BlueXP améliorée et restructurée, fournit une gestion centralisée du stockage NetApp et des services de données NetApp dans les environnements sur site et cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
+La NetApp Console, construite sur la base BlueXP améliorée et restructurée, fournit une gestion centralisée du stockage NetApp et des NetApp Data Services dans les environnements sur site et cloud à l'échelle de l'entreprise, offrant des informations en temps réel, des flux de travail plus rapides et une administration simplifiée, hautement sécurisée et conforme.
 
-Pour plus de détails sur ce qui a changé, consultez lelink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notes de version de la console NetApp"] .
+Pour plus de détails sur ce qui a changé, consultez lelink:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["Notes de version de la NetApp Console"] .
 
 
 
@@ -54,7 +54,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-linux.html#linux-
 
 === Corrections de bugs
 
-Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corriger quelques bugs.  La nouvelle version du courtier de données est la 1.0.56.
+Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corriger quelques bugs. La nouvelle version du courtier de données est la 1.0.56.
 
 
 
@@ -64,7 +64,7 @@ Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corr
 
 === Corrections de bugs
 
-Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corriger quelques bugs.  La nouvelle version du courtier de données est la 1.0.55.
+Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corriger quelques bugs. La nouvelle version du courtier de données est la 1.0.55.
 
 
 
@@ -74,7 +74,7 @@ Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corr
 
 === Corrections de bugs
 
-Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corriger quelques bugs.  La nouvelle version du courtier de données est la 1.0.54.
+Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corriger quelques bugs. La nouvelle version du courtier de données est la 1.0.54.
 
 
 
@@ -84,7 +84,7 @@ Nous avons mis à jour NetApp Copy and Sync et le courtier de données pour corr
 
 === Corrections de bugs
 
-Nous avons mis à jour Copy and Sync et le courtier de données pour corriger quelques bugs.  La nouvelle version du courtier de données est la 1.0.53.
+Nous avons mis à jour Copy and Sync et le courtier de données pour corriger quelques bugs. La nouvelle version du courtier de données est la 1.0.53.
 
 
 
@@ -94,7 +94,7 @@ Nous avons mis à jour Copy and Sync et le courtier de données pour corriger qu
 
 === Corrections de bugs
 
-NetApp Copy and Sync a été mis à jour pour corriger quelques bugs.  Le courtier de données a également été mis à jour pour appliquer les mises à jour de sécurité.  La nouvelle version du courtier de données est la 1.0.52.
+NetApp Copy and Sync a été mis à jour pour corriger quelques bugs.  Le courtier de données a également été mis à jour pour appliquer les mises à jour de sécurité. La nouvelle version du courtier de données est la 1.0.52.
 
 
 
@@ -465,7 +465,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#
 
 Vous pouvez désormais recevoir les notifications Cloud Sync par e-mail.
 
-Pour recevoir les notifications par e-mail, vous devez activer le paramètre *Notifications* sur la relation de synchronisation, puis configurer les paramètres Alertes et Notifications dans la console NetApp .
+Pour recevoir les notifications par e-mail, vous devez activer le paramètre *Notifications* sur la relation de synchronisation, puis configurer les paramètres Alertes et Notifications dans la NetApp Console.
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#setting-up-notifications["Apprenez à configurer les notifications"] .
 
@@ -508,7 +508,7 @@ Nous avons ajouté des moyens supplémentaires pour configurer des relations de 
 
 Vous pouvez désormais configurer une relation de synchronisation à partir de la page Systèmes en faisant glisser et en déposant un système sur un autre.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-drag-and-drop.png["Une capture d’écran qui montre le centre de notifications dans la console NetApp ."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-drag-and-drop.png["Une capture d’écran qui montre le centre de notifications dans la NetApp Console."]
 
 
 
@@ -516,7 +516,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/s
 
 Vous pouvez désormais configurer une relation de synchronisation pour le stockage Azure Blob ou pour Google Cloud Storage en sélectionnant le système sur la page Systèmes, puis en sélectionnant l’option de synchronisation dans le panneau de droite.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-panel.png["Une capture d’écran qui montre le centre de notifications dans la console NetApp ."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-enable-panel.png["Une capture d’écran qui montre le centre de notifications dans la NetApp Console."]
 
 
 
@@ -559,7 +559,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html#
 
 
 
-=== Nouvelle prise en charge de la région Google Cloud
+=== Nouvelle prise en charge régionale de Google Cloud
 
 Le courtier de données Cloud Sync est désormais pris en charge dans les régions Google Cloud suivantes :
 
@@ -621,7 +621,7 @@ Ces options sont prises en charge lorsque Azure Blob est la cible et que la sour
 
 
 
-== 01 mai 2022
+== 1er mai 2022
 
 
 
@@ -637,7 +637,7 @@ https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#
 
 Un nouveau paramètre *Notifications* est désormais disponible pour les relations de synchronisation.  Ce paramètre vous permet de choisir de recevoir ou non les notifications Cloud Sync dans le centre de notifications de la console NetApp .  Vous pouvez activer les notifications pour les synchronisations de données réussies, les synchronisations de données ayant échoué et les synchronisations de données annulées.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["Une capture d’écran qui montre le centre de notifications dans la console NetApp ."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["Une capture d’écran qui montre le centre de notifications dans la NetApp Console."]
 
 https://docs.netapp.com/us-en/bluexp-copy-sync/task-managing-relationships.html#change-the-settings-for-a-sync-relationship["En savoir plus sur la modification des paramètres d'une relation de synchronisation"] .
 
@@ -1002,9 +1002,9 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 === Le service autonome Cloud Sync est retiré
 
-Le service Cloud Sync autonome a été supprimé.  Vous devez désormais accéder à Cloud Sync directement depuis la console NetApp où toutes les mêmes fonctionnalités sont disponibles.
+Le service Cloud Sync autonome a été supprimé.  Vous devez désormais accéder à Cloud Sync directement depuis la NetApp Console où toutes les mêmes fonctionnalités sont disponibles.
 
-Après vous être connecté à la console NetApp , vous pouvez passer à l’onglet Synchronisation en haut et afficher vos relations, comme auparavant.
+Après vous être connecté à la NetApp Console, vous pouvez passer à l’onglet Synchronisation en haut et afficher vos relations, comme auparavant.
 
 
 

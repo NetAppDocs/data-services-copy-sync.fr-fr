@@ -59,7 +59,7 @@ Le logiciel de courtage de données s'exécute automatiquement en tant que root 
 == Exigences de mise en réseau
 
 * L'hôte Linux doit avoir une connexion à la source et à la cible.
-* Le serveur de fichiers doit permettre à l’hôte Linux d’accéder aux exportations.
+* Le serveur de fichiers doit permettre à l'hôte Linux d'accéder aux exportations.
 * Le port 443 doit être ouvert sur l'hôte Linux pour le trafic sortant vers AWS (le courtier de données communique en permanence avec le service Amazon SQS).
 * NetApp recommande de configurer la source, la cible et le courtier de données pour utiliser un service NTP (Network Time Protocol).  La différence de temps entre les trois composants ne doit pas dépasser 5 minutes.
 
@@ -139,11 +139,11 @@ La page d’instructions se charge sous peu.  Vous devrez suivre ces instruction
 
 . Sur la page d'instructions :
 +
-.. Sélectionnez si vous souhaitez activer l'accès à *AWS*, *Google Cloud* ou aux deux.
+.. Sélectionnez si vous souhaitez activer l'accès à *AWS*, *Google Cloud* ou les deux.
 .. Sélectionnez une option d'installation : *Pas de proxy*, *Utiliser un serveur proxy* ou *Utiliser un serveur proxy avec authentification*.
 +
 
-NOTE: L'utilisateur doit être un utilisateur local.  Les utilisateurs de domaine ne sont pas pris en charge.
+NOTE: L'utilisateur doit être un utilisateur local. Les utilisateurs de domaine ne sont pas pris en charge.
 
 .. Utilisez les commandes pour télécharger et installer le courtier de données.
 +

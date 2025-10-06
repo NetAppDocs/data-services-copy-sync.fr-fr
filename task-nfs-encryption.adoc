@@ -14,7 +14,7 @@ summary: Si votre entreprise dispose de politiques de sécurité strictes, synch
 
 
 [role="lead"]
-Si votre entreprise dispose de politiques de sécurité strictes, vous pouvez synchroniser les données NFS à l’aide du chiffrement des données en cours de vol dans NetApp Copy and Sync.  Cette fonctionnalité est prise en charge d’un serveur NFS vers un autre serveur NFS et d’ Azure NetApp Files vers Azure NetApp Files.
+Si votre entreprise dispose de politiques de sécurité strictes, vous pouvez synchroniser les données NFS à l'aide du chiffrement des données en cours de vol dans NetApp Copy and Sync.  Cette fonctionnalité est prise en charge d’un serveur NFS vers un autre serveur NFS et d’ Azure NetApp Files vers Azure NetApp Files.
 
 Par exemple, vous souhaiterez peut-être synchroniser des données entre deux serveurs NFS situés sur des réseaux différents.  Ou vous devrez peut-être transférer en toute sécurité des données sur Azure NetApp Files entre des sous-réseaux ou des régions.
 

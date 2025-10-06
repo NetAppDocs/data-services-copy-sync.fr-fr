@@ -16,7 +16,7 @@ summary: Lorsque vous créez une relation de synchronisation, NetApp Copy and Sy
 [role="lead"]
 Lorsque vous créez une relation de synchronisation, NetApp Copy and Sync copie les fichiers de la source vers la cible.  Après la copie initiale, la fonction Copier et synchroniser synchronise toutes les données modifiées toutes les 24 heures.
 
-Avant de pouvoir créer certains types de relations de synchronisation, vous devez d’abord créer un système dans la console NetApp .
+Avant de pouvoir créer certains types de relations de synchronisation, vous devez d’abord créer un système dans la NetApp Console.
 
 
 
@@ -58,7 +58,7 @@ image:screenshot_sync_we.gif["Une capture d'écran qui montre les actions dispon
 
 Suivez ces étapes pour synchroniser les données vers ou depuis un type de stockage pris en charge autre qu’Amazon Amazon FSx pour ONTAP, Azure NetApp Files, Cloud Volumes ONTAP ou les clusters ONTAP sur site.  Les étapes ci-dessous fournissent un exemple qui montre comment configurer une relation de synchronisation entre un serveur NFS et un bucket S3.
 
-. Dans la console NetApp , sélectionnez *Synchroniser*.
+. Dans la NetApp Console, sélectionnez *Synchroniser*.
 . Sur la page *Définir la relation de synchronisation*, choisissez une source et une cible.
 +
 Les étapes suivantes fournissent un exemple de création d’une relation de synchronisation entre un serveur NFS et un bucket S3.
@@ -251,12 +251,12 @@ Copier et synchroniser démarre la synchronisation des données entre la source 
 
 
 
-== Créer des relations de synchronisation à partir de la classification des données NetApp
+== Créer des relations de synchronisation à partir de la NetApp Data Classification
 
-Copy and Sync est intégré à la classification des données NetApp .  Depuis NetApp Data Classification, vous pouvez sélectionner les fichiers sources que vous souhaitez synchroniser avec un emplacement cible à l'aide de Copier et synchroniser.
+Copy and Sync est intégré à NetApp Data Classification.  Depuis NetApp Data Classification, vous pouvez sélectionner les fichiers sources que vous souhaitez synchroniser avec un emplacement cible à l'aide de Copier et synchroniser.
 
 Une fois que vous avez lancé une synchronisation de données à partir de NetApp Data Classification, toutes les informations sources sont contenues dans une seule étape et ne nécessitent que la saisie de quelques détails clés.  Vous choisissez ensuite l’emplacement cible de la nouvelle relation de synchronisation.
 
-image:screenshot-sync-data-sense.png["Une capture d’écran qui montre la page d’intégration de la classification des données NetApp qui apparaît après le démarrage d’une nouvelle synchronisation directement à partir de la classification des données NetApp ."]
+image:screenshot-sync-data-sense.png["Une capture d'écran qui montre la page d'intégration de la NetApp Data Classification qui apparaît après le démarrage d'une nouvelle synchronisation directement à partir de la NetApp Data Classification."]
 
-https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["Découvrez comment démarrer une relation de synchronisation à partir de la classification des données NetApp"^] .
+https://docs.netapp.com/us-en/bluexp-classification/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system["Découvrez comment démarrer une relation de synchronisation à partir de la NetApp Data Classification"^] .

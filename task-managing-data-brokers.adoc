@@ -49,7 +49,7 @@ Dans de nombreux cas, un seul courtier de données peut répondre aux exigences 
 
 Pour garantir la sécurité de votre machine de courtier en données, NetApp recommande ce qui suit :
 
-* SSH ne devrait pas autoriser la redirection X11
+* SSH ne devrait pas autoriser la transmission X11
 * SSH ne doit pas autoriser la redirection de connexion TCP
 * SSH ne devrait pas autoriser les tunnels
 * SSH ne doit pas accepter les variables d'environnement client

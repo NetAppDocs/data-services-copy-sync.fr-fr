@@ -11,7 +11,7 @@ settings:
   langs: fr-fr,us-en,de-de,es-es,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: Documents sur la copie et la synchronisation NetApp
+  - title: NetApp Copy and Sync
     url: "/index.html"
   - title: Notes de version
     entries:
@@ -56,7 +56,7 @@ sidebar:
         url: "/task-copying-acls.html"
       - title: Crypter les données NFS en vol
         url: "/task-nfs-encryption.html"
-      - title: Utiliser les secrets du coffre-fort HashiCorp
+      - title: Utilisez les secrets du coffre-fort HashiCorp
         url: "/task-external-vault.html"
     - title: Configurer les licences
       url: "/task-licensing.html"

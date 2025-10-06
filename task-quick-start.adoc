@@ -16,9 +16,9 @@ summary: La mise en route de NetApp Copy and Sync comprend quelques étapes.
 [role="lead"]
 La mise en route de NetApp Copy and Sync comprend quelques étapes.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]Connectez-vous et configurez la console NetApp
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Un"]Connectez-vous et configurez la NetApp Console
 [role="quick-margin-para"]
-Vous devriez avoir commencé à utiliser la console NetApp , ce qui inclut la connexion, la configuration d’un compte et éventuellement le déploiement d’un agent de console et la création de systèmes.
+Vous devriez avoir commencé à utiliser la NetApp Console, ce qui inclut la connexion, la configuration d’un compte et éventuellement le déploiement d’un agent de console et la création de systèmes.
 
 [role="quick-margin-para"]
 Si vous souhaitez créer des relations de synchronisation pour l’un des éléments suivants, vous devez d’abord créer ou découvrir un système :
@@ -34,7 +34,7 @@ Si vous souhaitez créer des relations de synchronisation pour l’un des élém
 Un agent de console est requis pour Cloud Volumes ONTAP, les clusters ONTAP sur site et Amazon FSx for ONTAP.
 
 [role="quick-margin-list"]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Découvrez comment démarrer avec la console NetApp"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["Découvrez comment démarrer avec la NetApp Console"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["En savoir plus sur les agents de console"^]
 
 
@@ -63,7 +63,7 @@ NetApp Copy and Sync vous guide tout au long du processus d'installation lorsque
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"]Créez votre première relation de synchronisation
 [role="quick-margin-para"]
-Connectez-vous à https://console.netapp.com/["la console NetApp"^] , sélectionnez *Synchroniser*, puis faites glisser et déposez vos sélections pour la source et la cible.  Suivez les instructions pour terminer la configuration. link:task-creating-relationships.html["Apprendre encore plus"] .
+Connectez-vous à https://console.netapp.com/["la NetApp Console"^] , sélectionnez *Synchroniser*, puis faites glisser et déposez vos sélections pour la source et la cible.  Suivez les instructions pour terminer la configuration. link:task-creating-relationships.html["Apprendre encore plus"] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"]Payez vos relations de synchronisation après la fin de votre essai gratuit
 [role="quick-margin-para"]

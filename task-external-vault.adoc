@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-external-vault.html 
 keywords: hashicorp, vault, credentials, secrets, API 
-summary: 'Lorsque vous créez une relation de synchronisation qui nécessite des informations d"identification Amazon S3, Azure ou Google Cloud, vous devez spécifier ces informations d"identification via l"interface utilisateur ou l"API NetApp Copy and Sync.  Une alternative consiste à configurer le courtier de données pour accéder aux informations d"identification directement à partir d"un coffre-fort HashiCorp externe.' 
+summary: 'Lorsque vous créez une relation de synchronisation qui nécessite des informations d"identification Amazon S3, Azure ou Google Cloud, vous devez spécifier ces informations d"identification via l"interface utilisateur ou l"API NetApp Copy and Sync .  Une alternative consiste à configurer le courtier de données pour accéder aux informations d"identification directement à partir d"un coffre-fort HashiCorp externe.' 
 ---
 = Configurer un groupe de courtiers de données pour utiliser un coffre-fort HashiCorp externe dans NetApp Copy and Sync
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Lorsque vous créez une relation de synchronisation qui nécessite des
 
 
 [role="lead"]
-Lorsque vous créez une relation de synchronisation qui nécessite des informations d'identification Amazon S3, Azure ou Google Cloud, vous devez spécifier ces informations d'identification via l'interface utilisateur ou l'API NetApp Copy and Sync.  Une alternative consiste à configurer le groupe de courtiers de données pour accéder aux informations d'identification (ou _secrets_) directement à partir d'un coffre-fort HashiCorp externe.
+Lorsque vous créez une relation de synchronisation qui nécessite des informations d'identification Amazon S3, Azure ou Google Cloud, vous devez spécifier ces informations d'identification via l'interface utilisateur ou l'API NetApp Copy and Sync .  Une alternative consiste à configurer le groupe de courtiers de données pour accéder aux informations d'identification (ou _secrets_) directement à partir d'un coffre-fort HashiCorp externe.
 
 Cette fonctionnalité est prise en charge via l'API Copier et synchroniser avec des relations de synchronisation qui nécessitent des informations d'identification Amazon S3, Azure ou Google Cloud.
 
@@ -100,7 +100,7 @@ chemin::
 +
 --
 ** Type : chaîne
-** Valeur : Préfixez le chemin d'accès au secret avec vos informations d'identification
+** Valeur : Préfixez le chemin vers le secret avec vos informations d'identification
 
 
 --
@@ -229,7 +229,7 @@ x-netapp-external-request-id-src: request ID as part of path for source credenti
 x-netapp-external-request-id-trg: request ID as part of path for target credentials
 Body: post relationship v2 body
 ....
-* Pour obtenir un jeton utilisateur et votre ID de compte NetApp Console,link:api-sync.html["se référer à cette page dans la documentation"] .
+* Pour obtenir un jeton utilisateur et votre ID de compte NetApp Console ,link:api-sync.html["se référer à cette page dans la documentation"] .
 * Pour construire un corps pour votre relation post-partum, https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["se référer à l'appel API relationships-v2"^] .
 
 

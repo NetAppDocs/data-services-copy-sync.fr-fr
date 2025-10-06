@@ -4,7 +4,7 @@ permalink: faq.html
 keywords: community, forums, help, support, videos, faq, getting help, permissions, access control lists, acls, preserve, preserving, troubleshooting, support, encryption, smb 
 summary: Vous pouvez obtenir de l’aide sur NetApp Copy and Sync et trouver plus d’informations via diverses ressources, notamment des forums, des services de chat et des vidéos. 
 ---
-= FAQ technique sur la copie et la synchronisation NetApp
+= FAQ technique sur la NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -68,7 +68,7 @@ Les frais de ressources sont liés aux coûts de calcul et de stockage pour l’
 
 === Comment Copy and Sync est-il facturé et comment gérer mon abonnement ?
 
-Il existe deux façons de payer les relations de synchronisation après la fin de votre essai gratuit de 14 jours.  La première option consiste à vous abonner auprès d’AWS ou d’Azure, ce qui vous permet de payer à l’utilisation ou de payer annuellement.  La deuxième option consiste à acheter des licences directement auprès de NetApp.  Dans chaque cas, votre abonnement sera géré via la place de marché de votre fournisseur et *non* via l'interface utilisateur de Copier et Sync.
+Il existe deux façons de payer les relations de synchronisation après la fin de votre essai gratuit de 14 jours.  La première option consiste à vous abonner auprès d’AWS ou d’Azure, ce qui vous permet de payer à l’utilisation ou de payer annuellement.  La deuxième option consiste à acheter des licences directement auprès de NetApp.  Dans chaque cas, votre abonnement sera géré via la place de marché de votre fournisseur et *non* via l'interface utilisateur de Copy and Sync.
 
 
 
@@ -86,7 +86,7 @@ Notez les points clés suivants concernant l’utilisation de Copy and Sync en d
 
 === Comment accéder à Copier et Sync ?
 
-La copie et la synchronisation sont disponibles à partir de la console NetApp .  Dans la navigation de gauche de la console, sélectionnez *Mobilité* > *Copier et synchroniser*.
+La copie et la synchronisation sont disponibles à partir de la NetApp Console.  Dans la navigation de gauche de la console, sélectionnez *Mobilité* > *Copier et synchroniser*.
 
 
 
