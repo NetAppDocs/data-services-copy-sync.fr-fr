@@ -24,6 +24,11 @@ Les licences doivent être gérées via NetApp Copy and Sync ou le site Web appl
 
 L'abonnement à Copy and Sync depuis AWS ou Azure vous permet de payer à un tarif horaire ou de payer annuellement. link:task-licensing.html["Vous pouvez vous abonner via AWS ou Azure"] , selon l'endroit où vous souhaitez être facturé.
 
+[NOTE]
+====
+Copy and Sync prend uniquement en charge les abonnements Marketplace d'**AWS** et d'**Azure**. Les abonnements Google Cloud Marketplace ne sont pas compatibles avec la fonction Copie et synchronisation.
+
+====
 
 
 === Abonnement horaire
