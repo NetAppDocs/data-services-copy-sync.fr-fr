@@ -55,6 +55,9 @@ PME:: Les informations d’identification SMB que vous saisissez lors de la conf
 NOTE: Le courtier de données ignore par défaut les répertoires suivants : .snapshot, ~snapshot, .copy-offload
 
 
+NOTE: Lors de la copie de données SMB dans Cloud Volumes ONTAP à l'aide de la fonction Copier et synchroniser, la propriété des fichiers et des dossiers du système source n'est pas conservée.  Ce comportement est dû au fait que Copy and Sync utilise un client SMB Linux, qui attribue la propriété au compte utilisateur ou de service utilisé pour authentifier le transfert.  Bien que les listes de contrôle d'accès puissent être conservées, les informations relatives à la propriété et à l'audit peuvent différer du système source. C'est le comportement attendu.
+
+
 
 == [[s3]]Exigences du bucket Amazon S3
 
