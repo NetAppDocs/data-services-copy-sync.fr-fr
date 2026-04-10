@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary:  
 ---
-= Mentions légales
+= Mentions légales relatives à NetApp Copy and Sync
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

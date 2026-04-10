@@ -20,7 +20,7 @@ Lorsque vous créez un nouveau groupe de courtiers de données pour NetApp Copy 
 
 == Configuration requise pour l'hôte Linux
 
-* *Compatibilité Node.js* : v21.2.0
+* *Compatibilité Node.js* : v25.x
 * *Système opérateur*:
 +
 ** CentOS 8.0 et 8.5
@@ -35,7 +35,7 @@ CentOS Stream n'est pas pris en charge.
 La commande `yum update` doit être exécuté sur l'hôte avant d'installer le courtier de données.
 
 +
-Un système Red Hat Enterprise Linux doit être enregistré auprès de Red Hat Subscription Management.  S'il n'est pas enregistré, le système ne peut pas accéder aux référentiels pour mettre à jour les logiciels tiers requis lors de l'installation.
+Un système Red Hat Enterprise Linux doit être enregistré auprès de Red Hat Subscription Management. S'il n'est pas enregistré, le système ne pourra pas accéder aux dépôts pour mettre à jour les logiciels tiers requis lors de l'installation.
 
 
 
@@ -121,11 +121,11 @@ Vous pouvez installer un courtier de données sur un hôte Linux lorsque vous cr
 .Étapes
 . link:task-login-copyandsync.html["Connectez-vous pour copier et synchroniser"] .
 . Sélectionnez *Créer une nouvelle synchronisation*.
-. Sur la page *Définir la relation de synchronisation*, choisissez une source et une cible et sélectionnez *Continuer*.
+. Sur la page *Définir la relation de synchronisation*, choisissez une source et une cible, puis sélectionnez *Continuer*.
 +
 Suivez les étapes jusqu'à atteindre la page *Data Broker Group*.
 
-. Sur la page *Groupe de courtiers de données*, sélectionnez *Créer un courtier de données*, puis sélectionnez *Courtier de données sur site*.
+. Sur la page *Data Broker Group*, sélectionnez *Create Data Broker* puis sélectionnez *On-Prem Data Broker*.
 +
 image:screenshot-on-prem.png["Une capture d’écran de la page Data Broker qui vous permet de choisir entre un courtier de données AWS, Azure, Google Cloud et On-Prem."]
 
@@ -133,13 +133,13 @@ image:screenshot-on-prem.png["Une capture d’écran de la page Data Broker qui 
 
 NOTE: Même si l'option est intitulée *_On-Prem_ Data Broker*, elle s'applique à un hôte Linux sur vos locaux ou dans le cloud.
 
-. Saisissez un nom pour le courtier de données et sélectionnez *Continuer*.
+. Saisissez un nom pour le courtier de données, puis sélectionnez *Continuer*.
 +
-La page d’instructions se charge sous peu.  Vous devrez suivre ces instructions : elles incluent un lien unique pour télécharger le programme d'installation.
+Une fois la page d'instructions chargée, suivez les instructions qui incluent un lien unique pour télécharger le programme d'installation.
 
 . Sur la page d'instructions :
 +
-.. Sélectionnez si vous souhaitez activer l'accès à *AWS*, *Google Cloud* ou les deux.
+.. Choisissez d'activer l'accès à *AWS*, *Google Cloud* ou aux deux.
 .. Sélectionnez une option d'installation : *Pas de proxy*, *Utiliser un serveur proxy* ou *Utiliser un serveur proxy avec authentification*.
 +
 
