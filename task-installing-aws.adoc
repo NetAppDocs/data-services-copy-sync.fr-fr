@@ -20,18 +20,21 @@ Vous avez également la possibilité d'installer le courtier de données sur un 
 
 
 
+[[supported-aws-regions]]
 == Régions AWS prises en charge
 
 Toutes les régions sont prises en charge, à l'exception des régions de Chine.
 
 
 
+[[root-privileges]]
 == Privilèges root
 
 Le logiciel de courtage de données s'exécute automatiquement en tant que root sur l'hôte Linux.  L'exécution en tant que root est une exigence pour les opérations de courtier en données.  Par exemple, pour monter des actions.
 
 
 
+[[networking-requirements]]
 == Exigences de mise en réseau
 
 * Le courtier de données a besoin d'une connexion Internet sortante pour pouvoir interroger Copy and Sync pour les tâches sur le port 443.
@@ -46,12 +49,14 @@ Si vous devez limiter la connectivité sortante, consultezlink:reference-network
 
 
 
+[[permissions-required-to-deploy-the-data-broker-in-aws]]
 == Autorisations requises pour déployer le courtier de données dans AWS
 
 Le compte utilisateur AWS que vous utilisez pour déployer le courtier de données doit disposer des autorisations incluses dans https://s3.amazonaws.com/metadata.datafabric.io/docs/aws_iam_policy.json["cette politique fournie par NetApp"^] .
 
 
 
+[[iamrequirements-to-use-your-own-iam-role-with-the-aws-data-broker]]
 == [[iam]]Conditions requises pour utiliser votre propre rôle IAM avec le courtier de données AWS
 
 Lorsque Copy and Sync déploie le courtier de données, il crée un rôle IAM pour l'instance du courtier de données. Vous pouvez déployer le courtier de données à l’aide de votre propre rôle IAM, si vous préférez.  Vous pouvez utiliser cette option si votre organisation dispose de politiques de sécurité strictes.
@@ -66,6 +71,7 @@ Suivez les étapes ci-dessous pour spécifier le rôle IAM lors du déploiement 
 
 
 
+[[create-the-data-broker]]
 == Créer le courtier de données
 
 Il existe plusieurs façons de créer un nouveau courtier de données.  Ces étapes décrivent comment installer un courtier de données dans AWS lors de la création d’une relation de synchronisation.
@@ -118,6 +124,7 @@ Vous avez déployé un courtier de données dans AWS et créé une nouvelle rela
 
 
 
+[[details-about-the-data-broker-instance]]
 == Détails sur l'instance du courtier de données
 
 Copy and Sync crée un courtier de données dans AWS à l’aide de la configuration suivante.

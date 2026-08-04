@@ -18,12 +18,14 @@ Un groupe de courtiers de données dans NetApp Copy and Sync synchronise les don
 
 
 
+[[how-data-broker-groups-work]]
 == Comment fonctionnent les groupes de courtiers en données
 
 Un groupe de courtiers de données peut inclure un ou plusieurs courtiers de données.  Le regroupement des courtiers de données peut contribuer à améliorer les performances des relations de synchronisation.
 
 
 
+[[groups-can-manage-several-relationships]]
 === Les groupes peuvent gérer plusieurs relations
 
 Un groupe de courtiers de données peut gérer une ou plusieurs relations de synchronisation à la fois.
@@ -39,12 +41,14 @@ Vous souhaitez accélérer les performances de la relation 1, vous ajoutez donc 
 
 
 
+[[number-of-data-brokers-in-a-group]]
 === Nombre de courtiers en données dans un groupe
 
 Dans de nombreux cas, un seul courtier de données peut répondre aux exigences de performances d’une relation de synchronisation.  Si ce n’est pas le cas, vous pouvez accélérer les performances de synchronisation en ajoutant des courtiers de données supplémentaires au groupe.  Mais vous devez d’abord vérifier d’autres facteurs qui peuvent avoir un impact sur les performances de synchronisation. link:faq.html#how-many-data-brokers-are-required-in-a-group["En savoir plus sur la façon de déterminer quand plusieurs courtiers en données sont nécessaires"] .
 
 
 
+[[security-recommendations]]
 == Recommandations de sécurité
 
 Pour garantir la sécurité de votre machine de courtier en données, NetApp recommande ce qui suit :
@@ -59,6 +63,7 @@ Ces recommandations de sécurité peuvent aider à empêcher les connexions non 
 
 
 
+[[add-a-new-data-broker-to-a-group]]
 == Ajouter un nouveau courtier de données à un groupe
 
 Il existe plusieurs façons de créer un nouveau courtier de données :
@@ -118,6 +123,7 @@ Pour obtenir de l'aide, reportez-vous aux pages suivantes :
 
 
 
+[[edit-a-groups-name]]
 == Modifier le nom d'un groupe
 
 Modifiez le nom d’un groupe de courtiers de données à tout moment.
@@ -137,6 +143,7 @@ La copie et la synchronisation mettent à jour le nom du groupe de courtiers de 
 
 
 
+[[set-up-a-unified-configuration]]
 == Mettre en place une configuration unifiée
 
 Si une relation de synchronisation rencontre des erreurs pendant le processus de synchronisation, l'unification de la concurrence du groupe de courtiers de données peut aider à réduire le nombre d'erreurs de synchronisation.  Soyez conscient que les modifications apportées à la configuration du groupe peuvent affecter les performances en ralentissant le transfert.
@@ -166,6 +173,7 @@ Notez ce qui suit :
 
 
 
+[[move-data-brokers-between-groups]]
 == Déplacer les courtiers de données entre les groupes
 
 Déplacez un courtier de données d'un groupe vers un autre si vous devez accélérer les performances du groupe de courtiers de données cible.
@@ -195,6 +203,7 @@ La copie et la synchronisation déplacent le courtier de données vers un groupe
 
 
 
+[[update-proxy-configuration]]
 == Mettre à jour la configuration du proxy
 
 Mettez à jour la configuration proxy d'un courtier de données en ajoutant des détails sur une nouvelle configuration proxy ou en modifiant la configuration proxy existante.
@@ -213,6 +222,7 @@ Copy and Sync met à jour le courtier de données pour utiliser la configuration
 
 
 
+[[view-a-data-brokers-configuration]]
 == Afficher la configuration d'un courtier de données
 
 Vous souhaiterez peut-être afficher les détails d'un courtier de données pour identifier des éléments tels que son nom d'hôte, son adresse IP, le processeur et la RAM disponibles, etc.
@@ -242,6 +252,7 @@ image:screenshot_sync_data_broker_details.gif["Une capture d'écran d'informatio
 
 
 
+[[address-issues-with-a-data-broker]]
 == Résoudre les problèmes avec un courtier en données
 
 Copy and Sync affiche un statut pour chaque courtier de données qui peut vous aider à résoudre les problèmes.
@@ -261,6 +272,7 @@ Par exemple, vous devrez peut-être simplement redémarrer le courtier de donné
 
 
 
+[[remove-a-data-broker-from-a-group]]
 == Supprimer un courtier de données d'un groupe
 
 Vous pouvez supprimer un courtier de données d'un groupe s'il n'est plus nécessaire ou si le déploiement initial a échoué.  Cette action supprime uniquement le courtier de données des enregistrements de Copy and Sync.  Vous devrez supprimer manuellement le courtier de données et toutes les ressources cloud supplémentaires vous-même.
@@ -286,6 +298,7 @@ Copier et synchroniser supprime le courtier de données du groupe.
 
 
 
+[[delete-a-data-broker-group]]
 == Supprimer un groupe de courtiers de données
 
 Si un groupe de courtiers de données ne gère plus aucune relation de synchronisation, vous pouvez supprimer le groupe, ce qui supprime tous les courtiers de données de la copie et de la synchronisation.

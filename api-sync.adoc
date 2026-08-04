@@ -18,6 +18,7 @@ Les fonctionnalités de NetApp Copy and Sync disponibles via l'interface utilisa
 
 
 
+[[get-started]]
 == Commencer
 
 Pour démarrer avec l’API Copier et synchroniser, vous devez obtenir un jeton utilisateur et votre ID de compte NetApp Console .  Vous devrez ajouter le jeton et l'ID de compte à l'en-tête d'autorisation lors des appels d'API.
@@ -89,6 +90,7 @@ La réponse de l'API inclut un champ « expires_in » qui indique quand le jeton
 
 
 
+[[use-list-apis]]
 == Utiliser les API de liste
 
 Les API de liste sont des API asynchrones, donc le résultat n'est pas renvoyé immédiatement (par exemple : `GET /data-brokers/{id}/list-nfs-export-folders` et `GET /data-brokers/{id}/list-s3-buckets` ).  La seule réponse du serveur est le statut HTTP 202.  Pour obtenir le résultat réel, vous devez utiliser le `GET /messages/client` API.
@@ -185,6 +187,7 @@ Le résultat est un tableau de messages.  À l'intérieur de chaque message se t
 ----
 
 
+[[api-reference]]
 == Référence API
 
 La documentation de chaque API de copie et de synchronisation est disponible à partir de https://api.cloudsync.netapp.com/docs[] .

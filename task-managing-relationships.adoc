@@ -18,6 +18,7 @@ Vous pouvez gérer les relations de synchronisation dans NetApp Copy and Sync à
 
 
 
+[[perform-an-immediate-data-sync]]
 == Effectuer une synchronisation immédiate des données
 
 Plutôt que d’attendre la prochaine synchronisation planifiée, vous pouvez immédiatement synchroniser les données entre la source et la cible.
@@ -33,6 +34,7 @@ Copier et synchroniser démarre le processus de synchronisation des données pou
 
 
 
+[[accelerate-sync-performance]]
 == Accélérer les performances de synchronisation
 
 Accélérez les performances d’une relation de synchronisation en ajoutant un courtier de données supplémentaire au groupe qui gère la relation.  Le courtier de données supplémentaire doit être un _nouveau_ courtier de données.
@@ -61,6 +63,7 @@ Copy and Sync ajoute le nouveau courtier de données au groupe.  Les performance
 
 
 
+[[update-credentials]]
 == Mettre à jour les informations d'identification
 
 Vous pouvez mettre à jour le courtier de données avec les dernières informations d'identification de la source ou de la cible dans une relation de synchronisation existante.  La mise à jour des informations d’identification peut être utile si vos politiques de sécurité exigent que vous mettiez à jour les informations d’identification régulièrement.
@@ -86,11 +89,10 @@ La copie et la synchronisation mettent à jour les informations d'identification
 
 
 
+[[set-up-notifications]]
 == Configurer les notifications
 
 Un paramètre *Notifications* pour chaque relation de synchronisation vous permet de choisir de recevoir ou non des notifications de copie et de synchronisation dans le centre de notifications de la console NetApp .  Vous pouvez activer les notifications pour les synchronisations de données réussies, les synchronisations de données ayant échoué et les synchronisations de données annulées.
-
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-copy-sync/main/media/screenshot-notification-center.png["Une capture d’écran qui montre le centre de notifications dans la NetApp Console."]
 
 De plus, vous pouvez également recevoir des notifications par email.
 
@@ -117,6 +119,7 @@ Vous recevrez désormais des notifications de copie et de synchronisation dans l
 
 
 
+[[change-the-settings-for-a-sync-relationship]]
 == Modifier les paramètres d'une relation de synchronisation
 
 Modifiez les paramètres qui définissent la manière dont les fichiers et dossiers sources sont synchronisés et conservés dans l’emplacement cible.
@@ -210,12 +213,14 @@ Copier et synchroniser modifie la relation de synchronisation avec les nouveaux 
 
 
 
+[[delete-relationships]]
 == Supprimer les relations
 
 Vous pouvez supprimer une relation de synchronisation si vous n'avez plus besoin de synchroniser les données entre la source et la cible.  Cette action ne supprime pas le groupe de courtiers de données (ni les instances individuelles de courtiers de données) et ne supprime pas les données de la cible.
 
 
 
+[[option-1-delete-a-single-sync-relationship]]
 === Option 1 : Supprimer une seule relation de synchronisation
 
 .Étapes
@@ -228,6 +233,7 @@ Copier et synchroniser supprime la relation de synchronisation.
 
 
 
+[[option-2-delete-multiple-sync-relationships]]
 === Option 2 : Supprimer plusieurs relations de synchronisation
 
 .Étapes

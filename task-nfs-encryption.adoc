@@ -20,6 +20,7 @@ Par exemple, vous souhaiterez peut-être synchroniser des données entre deux se
 
 
 
+[[how-data-in-flight-encryption-works]]
 == Comment fonctionne le cryptage des données en vol
 
 Le chiffrement des données en vol crypte les données NFS lorsqu'elles sont envoyées sur le réseau entre deux courtiers de données.  L'image suivante montre une relation entre deux serveurs NFS et deux courtiers de données :
@@ -44,6 +45,7 @@ Si vous préférez synchroniser les données plus fréquemment,link:task-managin
 
 
 
+[[supported-nfs-versions]]
 == Versions NFS prises en charge
 
 * Pour les serveurs NFS, le chiffrement des données en vol est pris en charge avec les versions NFS 3, 4.0, 4.1 et 4.2.
@@ -52,12 +54,14 @@ Si vous préférez synchroniser les données plus fréquemment,link:task-managin
 
 
 
+[[proxy-server-limitation]]
 == Limitation du serveur proxy
 
 Si vous créez une relation de synchronisation chiffrée, les données chiffrées sont envoyées via HTTPS et ne sont pas routables via un serveur proxy.
 
 
 
+[[what-youll-need-to-get-started]]
 == Ce dont vous aurez besoin pour commencer
 
 Assurez-vous d'avoir les éléments suivants :
@@ -85,6 +89,7 @@ Si vous n’avez pas encore déployé de courtier de données, consultez les exi
 
 
 
+[[sync-nfs-data-using-data-in-flight-encryption]]
 == Synchroniser les données NFS à l'aide du chiffrement des données en vol
 
 Créez une nouvelle relation de synchronisation entre deux serveurs NFS ou entre Azure NetApp Files, activez l’option de chiffrement en vol et suivez les invites.

@@ -18,12 +18,14 @@ La mise en réseau pour NetApp Copy and Sync inclut la connectivité entre le gr
 
 
 
+[[data-broker-location]]
 == Localisation du courtier en données
 
 Un groupe de courtiers en données se compose d'un ou plusieurs courtiers en données installés dans le cloud ou dans vos locaux.
 
 
 
+[[data-broker-in-the-cloud]]
 === Courtier de données dans le cloud
 
 L'image suivante montre un courtier de données exécuté dans le cloud, dans AWS, Google Cloud ou Azure.  La source et la cible peuvent se trouver à n’importe quel endroit, à condition qu’il existe une connexion au courtier de données.  Par exemple, vous pouvez disposer d’une connexion VPN entre votre centre de données et votre fournisseur de cloud.
@@ -35,6 +37,7 @@ image:diagram_networking_cloud2.png["Un diagramme qui montre la copie et la sync
 
 
 
+[[data-broker-on-your-premises]]
 === Courtier de données dans vos locaux
 
 L’image suivante montre le courtier de données exécuté sur site dans un centre de données.  Encore une fois, la source et la cible peuvent être situées à n’importe quel endroit, à condition qu’il existe une connexion au courtier de données.
@@ -43,6 +46,7 @@ image:diagram_networking_onprem.png["Un diagramme qui montre la copie et la sync
 
 
 
+[[networking-requirements]]
 == Exigences de mise en réseau
 
 * La source et la cible doivent disposer d'une connexion réseau au groupe de courtiers de données.
@@ -55,12 +59,14 @@ Par exemple, si un serveur NFS se trouve dans votre centre de données et qu'un 
 
 
 
+[[networking-endpoints]]
 == Points de terminaison réseau
 
 Le courtier de données NetApp nécessite un accès Internet sortant via le port 443 pour communiquer avec Copy and Sync et pour contacter quelques autres services et référentiels.  Votre navigateur Web local nécessite également l’accès aux points de terminaison pour certaines actions.  Si vous devez limiter la connectivité sortante, reportez-vous à la liste de points de terminaison suivante lors de la configuration de votre pare-feu pour le trafic sortant.
 
 
 
+[[data-broker-endpoints]]
 === Points de terminaison du courtier en données
 
 Un courtier en données contacte les points de terminaison suivants :
@@ -116,6 +122,7 @@ Un courtier en données contacte les points de terminaison suivants :
 |===
 
 
+[[web-browser-endpoints]]
 === Points de terminaison du navigateur Web
 
 Votre navigateur Web doit accéder au point de terminaison suivant pour télécharger les journaux à des fins de dépannage :

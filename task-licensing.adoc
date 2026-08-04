@@ -28,6 +28,7 @@ Les licences doivent être gérées via NetApp Copy and Sync ou le site Web appl
 
 
 
+[[awssubscribe-from-aws]]
 == [[aws]]Abonnez-vous à AWS
 
 AWS vous permet de payer à l'utilisation ou annuellement.
@@ -54,6 +55,7 @@ video::796ffd6d-cade-4750-8504-b24c010b225d[panopto]
 
 
 
+[[azuresubscribe-from-azure]]
 == [[azure]]S'abonner à Azure
 
 Azure vous permet de payer à l’utilisation ou annuellement.
@@ -82,6 +84,7 @@ video::a6a39447-b7b1-42f6-9c89-b24c010b21b9[panopto]
 
 
 
+[[licensespurchase-licenses-from-netapp-and-add-them-to-copy-and-sync]]
 == [[licences]]Achetez des licences auprès de NetApp et ajoutez-les à Copy and Sync
 
 Pour payer vos relations de synchronisation à l'avance, vous devez acheter une ou plusieurs licences et les ajouter à Copier et Sync.
@@ -109,6 +112,7 @@ Vous aurez besoin du numéro de série de votre licence ainsi que du nom d'utili
 
 
 
+[[update-a-license]]
 == Mettre à jour une licence
 
 Si vous avez prolongé une licence Copy and Sync que vous avez achetée auprès de NetApp, la nouvelle date d'expiration ne sera pas mise à jour automatiquement dans Copy and Sync.  Vous devez ajouter à nouveau la licence pour actualiser la date d'expiration.  Les licences doivent être gérées via Copy and Sync ou le site Web applicable et *non* via les abonnements à la NetApp Console .

@@ -16,10 +16,11 @@ summary: 'Créez et affichez des rapports pour obtenir des informations que vous
 [role="lead"]
 Créez et affichez des rapports dans NetApp Copy and Sync pour obtenir des informations que vous pouvez utiliser avec l'aide du personnel NetApp pour optimiser la configuration d'un courtier de données et améliorer les performances.
 
-Chaque rapport fournit des détails détaillés sur un chemin dans une relation de synchronisation.  Il comprendra le nombre de répertoires, de fichiers et de liens symboliques, la distribution de la taille des fichiers, la profondeur et la largeur des répertoires, l'heure de modification et l'heure d'accès.  Cela diffère des statistiques de synchronisation, qui sont disponibles à partir du tableau de bord après https://docs.netapp.com/us-en/bluexp-copy-sync/task-creating-relationships.html["créer et terminer avec succès une synchronisation"] .
+Chaque rapport fournit des informations détaillées sur un chemin dans une relation de synchronisation. Il inclura le nombre de répertoires, de fichiers et de liens symboliques, la répartition de la taille des fichiers, la profondeur et la largeur des répertoires, la date de modification et le temps d'accès. Cela diffère des statistiques de synchronisation, qui sont disponibles depuis le tableau de bord après link:task-creating-relationships.html["créer et terminer avec succès une synchronisation"].
 
 
 
+[[create-reports]]
 == Créer des rapports
 
 Chaque fois que vous créez un rapport, Copy and Sync analyse le chemin, puis compile les détails dans un rapport.
@@ -48,6 +49,7 @@ image:screenshot_sync_report_object.gif["Un rapport qui affiche le nombre d'él�
 
 
 
+[[download-reports]]
 == Télécharger les rapports
 
 Vous pouvez télécharger un rapport au format PDF afin de pouvoir le consulter hors ligne ou le partager.
@@ -64,6 +66,7 @@ image:screenshot-sync-download-report.png["Une capture d’écran de l’option 
 
 
 
+[[view-report-errors]]
 == Afficher les erreurs du rapport
 
 Le tableau Chemins identifie si des erreurs sont présentes dans le rapport le plus récent.  Une erreur identifie un problème rencontré par Copy and Sync lors de l'analyse du chemin.
@@ -88,6 +91,7 @@ Une fois le problème résolu, l’erreur ne devrait plus apparaître la prochai
 
 
 
+[[delete-reports]]
 == Supprimer les rapports
 
 Vous pouvez supprimer un rapport s'il contient une erreur que vous avez corrigée ou si le rapport est lié à une relation de synchronisation que vous avez supprimée.

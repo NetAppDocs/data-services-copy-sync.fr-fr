@@ -32,6 +32,7 @@ Maintenant que tout est configuré, vous pouvez envoyer un appel API pour créer
 
 
 
+[[prepare-the-vault]]
 == Préparer le coffre-fort
 
 Vous devrez fournir à Copy and Sync l'URL des secrets de votre coffre-fort.  Préparez le coffre-fort en configurant ces URL.  Vous devez configurer des URL vers les informations d’identification pour chaque source et cible dans les relations de synchronisation que vous prévoyez de créer.
@@ -48,6 +49,7 @@ Crédits:: L'URL doit se terminer par _Creds_.
 
 
 
+[[examples]]
 === Exemples
 
 Les exemples suivants montrent des URL vers des secrets.
@@ -68,6 +70,7 @@ Le chemin du préfixe est _/my-path/all-secrets/_, l’ID de demande est _n32hcb
 
 
 
+[[prepare-the-data-broker-group]]
 == Préparer le groupe de courtiers en données
 
 Préparez le groupe de courtiers de données pour récupérer les informations d’identification du coffre-fort externe en modifiant le fichier de configuration local pour chaque courtier de données du groupe.
@@ -152,6 +155,7 @@ Espace de noms::
 
 
 
+[[example-for-aws-role-authentication]]
 === Exemple d'authentification aws-role
 
 [source, json]
@@ -173,6 +177,7 @@ Espace de noms::
 ----
 
 
+[[example-for-gcp-iam-authentication]]
 === Exemple d'authentification gcp-iam
 
 [source, json]
@@ -202,6 +207,7 @@ Espace de noms::
 ----
 
 
+[[set-up-permissions-when-using-gcp-iam-authentication]]
 === Configurer les autorisations lors de l'utilisation de l'authentification gcp-iam
 
 Si vous utilisez la méthode d'authentification _gcp-iam_, le courtier de données doit disposer de l'autorisation GCP suivante :
@@ -214,6 +220,7 @@ link:task-installing-gcp.html#permissions-required-for-the-service-account["En s
 
 
 
+[[creating-a-new-sync-relationship-using-secrets-from-the-vault]]
 == Créer une nouvelle relation de synchronisation à l'aide des secrets du coffre-fort
 
 Maintenant que tout est configuré, vous pouvez envoyer un appel API pour créer une relation de synchronisation qui utilise votre coffre-fort pour obtenir les secrets.
@@ -235,6 +242,7 @@ Body: post relationship v2 body
 
 
 
+[[example]]
 === Exemple
 
 Exemple pour la requête POST :

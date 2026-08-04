@@ -18,6 +18,7 @@ Lorsque vous créez un nouveau groupe de courtiers de données pour NetApp Copy 
 
 
 
+[[linux-host-requirements]]
 == Configuration requise pour l'hôte Linux
 
 * *Compatibilité Node.js* : v25.x
@@ -50,12 +51,14 @@ SELinux applique une politique qui bloque les mises à jour du logiciel du court
 
 
 
+[[root-privileges]]
 == Privilèges root
 
 Le logiciel de courtage de données s'exécute automatiquement en tant que root sur l'hôte Linux.  L'exécution en tant que root est une exigence pour les opérations de courtier en données.  Par exemple, pour monter des actions.
 
 
 
+[[networking-requirements]]
 == Exigences de mise en réseau
 
 * L'hôte Linux doit avoir une connexion à la source et à la cible.
@@ -66,6 +69,7 @@ Le logiciel de courtage de données s'exécute automatiquement en tant que root 
 
 
 
+[[enable-access-to-aws]]
 == Activer l'accès à AWS
 
 Si vous prévoyez d’utiliser le courtier de données avec une relation de synchronisation qui inclut un bucket S3, vous devez préparer l’hôte Linux pour l’accès AWS. Lorsque vous installez le courtier de données, vous devez fournir des clés AWS pour un utilisateur AWS disposant d'un accès programmatique et d'autorisations spécifiques.
@@ -86,6 +90,7 @@ Assurez-vous de copier les clés AWS car vous devez les spécifier lors de l’i
 
 
 
+[[enable-access-to-google-cloud]]
 == Activer l'accès à Google Cloud
 
 Si vous prévoyez d'utiliser le courtier de données avec une relation de synchronisation qui inclut un bucket Google Cloud Storage, vous devez préparer l'hôte Linux pour l'accès à Google Cloud. Lorsque vous installez le courtier de données, vous devez fournir une clé pour un compte de service disposant d'autorisations spécifiques.
@@ -108,12 +113,14 @@ NOTE: Lorsque vous créez une clé, le fichier est généré et téléchargé su
 
 
 
+[[enable-access-to-microsoft-azure]]
 == Activer l'accès à Microsoft Azure
 
 L’accès à Azure est défini par relation en fournissant un compte de stockage et une chaîne de connexion dans l’assistant de synchronisation des relations.
 
 
 
+[[install-the-data-broker]]
 == Installer le courtier de données
 
 Vous pouvez installer un courtier de données sur un hôte Linux lorsque vous créez une relation de synchronisation.

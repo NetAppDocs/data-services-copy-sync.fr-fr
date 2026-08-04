@@ -18,12 +18,14 @@ Cette FAQ peut vous aider si vous cherchez simplement une réponse rapide à une
 
 
 
+[[getting-started]]
 == Commencer
 
 Les questions suivantes concernent la prise en main de NetApp Copy and Sync.
 
 
 
+[[how-does-netapp-copy-and-sync-work]]
 === Comment fonctionne NetApp Copy and Sync ?
 
 Copy and Sync utilise le logiciel de courtier de données NetApp pour synchroniser les données d'une source vers une cible (c'est ce qu'on appelle une _relation de synchronisation_).
@@ -34,12 +36,14 @@ Après la copie initiale, Copier et synchroniser synchronise toutes les données
 
 
 
+[[how-does-the-14-day-free-trial-work]]
 === Comment fonctionne l'essai gratuit de 14 jours ?
 
 L'essai gratuit de 14 jours commence lorsque vous vous inscrivez à Copy and Sync.  Vous n'êtes pas soumis aux frais NetApp pour les relations de copie et de synchronisation que vous créez pendant 14 jours.  Cependant, tous les frais de ressources pour tous les courtiers de données que vous déployez s'appliquent toujours.
 
 
 
+[[how-much-does-copy-and-sync-cost]]
 === Combien coûte Copy and Sync ?
 
 Il existe deux types de coûts associés à l’utilisation de Copy and Sync : les frais de service et les frais de ressources.
@@ -66,12 +70,14 @@ Les frais de ressources sont liés aux coûts de calcul et de stockage pour l’
 
 
 
+[[how-is-copy-and-sync-billed-and-how-do-i-manage-my-subscription]]
 === Comment Copy and Sync est-il facturé et comment gérer mon abonnement ?
 
 Il existe deux façons de payer les relations de synchronisation après la fin de votre essai gratuit de 14 jours.  La première option consiste à vous abonner auprès d’AWS ou d’Azure, ce qui vous permet de payer à l’utilisation ou de payer annuellement.  La deuxième option consiste à acheter des licences directement auprès de NetApp.  Dans chaque cas, votre abonnement sera géré via la place de marché de votre fournisseur et *non* via l'interface utilisateur de Copy and Sync.
 
 
 
+[[can-i-use-copy-and-sync-outside-the-cloud]]
 === Puis-je utiliser Copy and Sync en dehors du cloud ?
 
 Oui, vous pouvez utiliser Copy and Sync dans une architecture non cloud.  La source et la cible peuvent résider sur site, tout comme le logiciel de courtage de données.
@@ -84,30 +90,35 @@ Notez les points clés suivants concernant l’utilisation de Copy and Sync en d
 
 
 
+[[how-do-i-access-copy-and-sync]]
 === Comment accéder à Copier et Sync ?
 
 La copie et la synchronisation sont disponibles à partir de la NetApp Console.  Dans la navigation de gauche de la console, sélectionnez *Mobilité* > *Copier et synchroniser*.
 
 
 
+[[whats-a-data-broker-group]]
 === Qu'est-ce qu'un groupe de courtiers en données ?
 
 Chaque courtier de données appartient à un groupe de courtiers de données.  Le regroupement des courtiers de données permet d’améliorer les performances des relations de synchronisation.
 
 
 
+[[supported-sources-and-targets]]
 == Sources et cibles prises en charge
 
 Les questions suivantes concernent la source et les cibles prises en charge dans une relation de synchronisation.
 
 
 
+[[which-sources-and-targets-does-copy-and-sync-support]]
 === Quelles sources et cibles Copy and Sync prend-il en charge ?
 
 Copy and Sync prend en charge de nombreux types différents de relations de synchronisation. link:reference-supported-relationships.html["Voir la liste complète"] .
 
 
 
+[[what-versions-of-nfs-and-smb-does-copy-and-sync-support]]
 === Quelles versions de NFS et SMB Copy and Sync prennent-elles en charge ?
 
 Copy and Sync prend en charge NFS version 3 et ultérieure, ainsi que SMB version 1 et ultérieure.
@@ -116,6 +127,7 @@ link:reference-requirements.html["En savoir plus sur les exigences de synchronis
 
 
 
+[[when-amazon-s3-is-the-target-can-the-data-be-tiered-to-a-specific-s3-storage-class]]
 === Lorsque Amazon S3 est la cible, les données peuvent-elles être hiérarchisées vers une classe de stockage S3 spécifique ?
 
 Oui, vous pouvez choisir une classe de stockage S3 spécifique lorsque AWS S3 est la cible :
@@ -131,6 +143,7 @@ Oui, vous pouvez choisir une classe de stockage S3 spécifique lorsque AWS S3 es
 
 
 
+[[what-about-storage-tiers-for-azure-blob-storage]]
 === Qu’en est-il des niveaux de stockage pour le stockage Azure Blob ?
 
 Vous pouvez choisir un niveau de stockage Azure Blob spécifique lorsqu'un conteneur Blob est la cible :
@@ -141,6 +154,7 @@ Vous pouvez choisir un niveau de stockage Azure Blob spécifique lorsqu'un conte
 
 
 
+[[do-you-support-google-cloud-storage-tiers]]
 === Prenez-vous en charge les niveaux de stockage Google Cloud ?
 
 Oui, vous pouvez choisir une classe de stockage spécifique lorsqu'un bucket Google Cloud Storage est la cible :
@@ -153,12 +167,14 @@ Oui, vous pouvez choisir une classe de stockage spécifique lorsqu'un bucket Goo
 
 
 
+[[networking]]
 == Réseautage
 
 Les questions suivantes concernent les exigences réseau pour la copie et la synchronisation.
 
 
 
+[[what-are-the-networking-requirements-for-copy-and-sync]]
 === Quelles sont les exigences réseau pour la copie et la synchronisation ?
 
 L'environnement de copie et de synchronisation nécessite qu'un groupe de courtiers de données soit connecté à la source et à la cible via le protocole sélectionné ou l'API de stockage d'objets (Amazon S3, Azure Blob, IBM Cloud Object Storage).
@@ -169,6 +185,7 @@ Pour plus de détails,link:reference-networking.html["examiner les exigences de 
 
 
 
+[[can-i-use-a-proxy-server-with-the-data-broker]]
 === Puis-je utiliser un serveur proxy avec le courtier de données ?
 
 Oui.
@@ -179,12 +196,14 @@ La seule limitation du serveur proxy concerne l’utilisation du chiffrement des
 
 
 
+[[data-synchronization]]
 == Synchronisation des données
 
 Les questions suivantes concernent le fonctionnement de la synchronisation des données.
 
 
 
+[[how-often-does-synchronization-occur]]
 === À quelle fréquence la synchronisation se produit-elle ?
 
 La planification par défaut est définie pour une synchronisation quotidienne.  Après la synchronisation initiale, vous pouvez :
@@ -196,12 +215,14 @@ La planification par défaut est définie pour une synchronisation quotidienne. 
 
 
 
+[[what-is-the-minimum-sync-schedule]]
 === Quel est le calendrier de synchronisation minimum ?
 
 Vous pouvez planifier une relation pour synchroniser les données aussi souvent que toutes les 1 minute.
 
 
 
+[[does-the-data-broker-group-retry-when-a-file-fails-to-sync-or-does-it-timeout]]
 === Le groupe de courtiers de données réessaye-t-il lorsqu'un fichier ne parvient pas à se synchroniser ?  Ou est-ce que ça expire ?
 
 Un groupe de courtiers de données n'expire pas lorsqu'un seul fichier ne parvient pas à être transféré.  Au lieu de cela, le groupe de courtiers de données réessaye 3 fois avant d'ignorer le fichier.  La valeur de nouvelle tentative est configurable dans les paramètres d'une relation de synchronisation.
@@ -210,6 +231,7 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[what-if-i-have-a-very-large-dataset]]
 === Que faire si j’ai un très grand ensemble de données ?
 
 Si un seul répertoire contient 600 000 fichiers ou plus,link:task-get-help.html["Contactez-nous"] afin que nous puissions vous aider à configurer le groupe de courtiers de données pour gérer la charge utile. Nous devrons peut-être ajouter de la mémoire supplémentaire au groupe de courtiers de données.
@@ -218,12 +240,14 @@ Notez qu'il n'y a pas de limite au nombre total de fichiers dans le point de mon
 
 
 
+[[security]]
 == Sécurité
 
 Les questions suivantes concernent la sécurité.
 
 
 
+[[is-copy-and-sync-secure]]
 === Copy and Sync est-il sécurisé ?
 
 Oui. Toute la connectivité réseau de copie et de synchronisation est effectuée à l'aide https://aws.amazon.com/sqs/["Service de file d'attente simple Amazon (SQS)"^] .
@@ -241,6 +265,7 @@ Chacune de ces méthodes établit une connexion sécurisée entre vos serveurs N
 
 
 
+[[is-data-encrypted-by-copy-and-sync]]
 === Les données sont-elles cryptées par Copy and Sync ?
 
 * Copy and Sync prend en charge le chiffrement des données en cours de vol entre les serveurs NFS source et cible. link:task-nfs-encryption.html["Apprendre encore plus"] .
@@ -254,12 +279,14 @@ Copy and Sync ne peut pas crypter les données SMB elles-mêmes.
 
 
 
+[[permissions]]
 == Autorisations
 
 Les questions suivantes concernent les autorisations de données.
 
 
 
+[[are-smb-data-permissions-synced-to-the-target-location]]
 === Les autorisations de données SMB sont-elles synchronisées avec l’emplacement cible ?
 
 Vous pouvez configurer la copie et la synchronisation pour conserver les listes de contrôle d'accès (ACL) entre un partage SMB source et un partage SMB cible, et d'un partage SMB source vers le stockage d'objets (sauf pour ONTAP S3).
@@ -274,6 +301,7 @@ NOTE: Copy Sync copie les ACL SMB (autorisations), mais ne copie pas la proprié
 
 
 
+[[are-nfs-data-permissions-synced-to-the-target-location]]
 === Les autorisations de données NFS sont-elles synchronisées avec l’emplacement cible ?
 
 Copy and Sync copie automatiquement les autorisations NFS entre les serveurs NFS comme suit :
@@ -284,10 +312,12 @@ Copy and Sync copie automatiquement les autorisations NFS entre les serveurs NFS
 
 
 
+[[object-storage-metadata]]
 == Métadonnées de stockage d'objets
 
 
 
+[[what-kinds-of-sync-relationships-preserve-object-storage-metadata]]
 === Quels types de relations de synchronisation préservent les métadonnées de stockage d’objets ?
 
 Copier et synchroniser copie les métadonnées de stockage d'objets de la source vers la cible pour les types de relations de synchronisation suivants :
@@ -311,24 +341,28 @@ Copier et synchroniser copie les métadonnées de stockage d'objets de la source
 
 
 
+[[what-kinds-of-metadata-are-replicated-during-syncs-where-nfs-or-smb-are-the-source]]
 === Quels types de métadonnées sont répliqués lors des synchronisations où NFS ou SMB sont la source ?
 
 Les métadonnées telles que l'ID utilisateur, l'heure de modification, l'heure d'accès et le GID sont répliquées par défaut.  Les utilisateurs peuvent choisir de répliquer l'ACL à partir des CIF en le marquant comme requis lors de la création d'une relation de synchronisation.
 
 
 
+[[performance]]
 == Performances
 
 Les questions suivantes concernent les performances de copie et de synchronisation.
 
 
 
+[[what-does-the-progress-indicator-for-a-sync-relationship-represent]]
 === Que représente l’indicateur de progression d’une relation de synchronisation ?
 
 La relation de synchronisation montre le débit de l'adaptateur réseau du groupe de courtiers de données.  Si vous avez accéléré les performances de synchronisation en utilisant plusieurs courtiers de données, le débit correspond à la somme de tout le trafic.  Ce débit est actualisé toutes les 20 secondes.
 
 
 
+[[im-experiencing-performance-issues-can-we-limit-the-number-of-concurrent-transfers]]
 === Je rencontre des problèmes de performances.  Pouvons-nous limiter le nombre de transferts simultanés ?
 
 Si vous avez des fichiers très volumineux (plusieurs Tio chacun), le processus de transfert peut prendre beaucoup de temps et les performances peuvent être affectées.
@@ -337,6 +371,7 @@ Limiter le nombre de transferts simultanés peut être utile. link:task-get-help
 
 
 
+[[why-am-i-experiencing-low-performance-with-azure-netapp-files]]
 === Pourquoi est-ce que je rencontre de faibles performances avec Azure NetApp Files?
 
 Lorsque vous synchronisez des données vers ou depuis Azure NetApp Files, vous pouvez rencontrer des échecs et des problèmes de performances si le niveau de service du disque est Standard.
@@ -347,6 +382,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[how-many-data-brokers-are-required-in-a-group]]
 === Combien de courtiers en données sont nécessaires dans un groupe ?
 
 Lorsque vous créez une nouvelle relation, vous démarrez avec un seul courtier de données dans un groupe (sauf si vous avez sélectionné un courtier de données existant appartenant à une relation de synchronisation accélérée).  Dans de nombreux cas, un seul courtier de données peut répondre aux exigences de performances d’une relation de synchronisation.  Si ce n’est pas le cas, vous pouvez accélérer les performances de synchronisation en ajoutant des courtiers de données supplémentaires au groupe.  Mais vous devez d’abord vérifier d’autres facteurs qui peuvent avoir un impact sur les performances de synchronisation.
@@ -359,18 +395,21 @@ Vous pouvez ensuite envisager d’accélérer les performances de synchronisatio
 
 
 
+[[deleting-things]]
 == Supprimer des choses
 
 Les questions suivantes concernent la suppression des relations de synchronisation et des données des sources et des cibles.
 
 
 
+[[what-happens-if-i-delete-my-copy-and-sync-relationship]]
 === Que se passe-t-il si je supprime ma relation Copier et Synchroniser ?
 
 La suppression d'une relation arrête toutes les synchronisations de données futures et met fin au paiement.  Toutes les données synchronisées avec la cible restent telles quelles.
 
 
 
+[[what-happens-if-i-delete-something-from-my-source-server-is-it-removed-from-the-target-too]]
 === Que se passe-t-il si je supprime quelque chose de mon serveur source ?  Est-il également supprimé de la cible ?
 
 Par défaut, si vous disposez d'une relation de synchronisation active, l'élément supprimé sur le serveur source n'est pas supprimé de la cible lors de la prochaine synchronisation.  Mais il existe une option dans les paramètres de synchronisation pour chaque relation, où vous pouvez définir que Copier et Synchroniser supprimeront les fichiers dans l'emplacement cible s'ils ont été supprimés de la source.
@@ -379,24 +418,28 @@ link:task-managing-relationships.html#change-the-settings-for-a-sync-relationshi
 
 
 
+[[what-happens-if-i-delete-something-from-my-target-is-it-removed-from-my-source-too]]
 === Que se passe-t-il si je supprime quelque chose de ma cible ?  Est-ce que c'est également supprimé de ma source ?
 
 Si un élément est supprimé de la cible, il ne sera pas supprimé de la source.  La relation est à sens unique : de la source vers la cible.  Lors du cycle de synchronisation suivant, Copier et Sync compare la source à la cible, identifie que l'élément est manquant et Copier et Sync le copie à nouveau de la source vers la cible.
 
 
 
+[[troubleshooting]]
 == Dépannage
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Sync/Cloud_Sync_FAQ:_Support_and_Troubleshooting["Base de connaissances NetApp : FAQ sur la copie et la synchronisation : Assistance et dépannage"^]
 
 
 
+[[data-broker-deep-dive]]
 == Plongée en profondeur dans le domaine des courtiers en données
 
 La question suivante concerne le courtier en données.
 
 
 
+[[can-you-explain-the-architecture-of-the-data-broker]]
 === Pouvez-vous expliquer l’architecture du courtier de données ?
 
 Bien sûr.  Voici les points les plus importants :

@@ -18,6 +18,7 @@ Vérifiez que votre source et vos cibles répondent aux exigences suivantes dans
 
 
 
+[[networking]]
 == Réseautage
 
 * La source et la cible doivent disposer d'une connexion réseau au groupe de courtiers de données.
@@ -29,12 +30,14 @@ Par exemple, si un serveur NFS se trouve dans votre centre de données et qu'un 
 
 
 
+[[target-directory]]
 == Répertoire cible
 
 Lorsque vous créez une relation de synchronisation, Copier et synchroniser vous permet de sélectionner un répertoire cible existant, puis éventuellement de créer un nouveau dossier à l'intérieur de ce répertoire.  Assurez-vous donc que votre répertoire cible préféré existe déjà.
 
 
 
+[[permissions-to-read-directories]]
 == Autorisations de lecture des répertoires
 
 Afin d'afficher chaque répertoire ou dossier d'une source ou d'une cible, Copy and Sync a besoin d'autorisations de lecture sur le répertoire ou le dossier.
@@ -59,12 +62,14 @@ NOTE: Lors de la copie de données SMB dans Cloud Volumes ONTAP à l'aide de la 
 
 
 
+[[s3amazon-s3-bucket-requirements]]
 == [[s3]]Exigences du bucket Amazon S3
 
 Assurez-vous que votre compartiment Amazon S3 répond aux exigences suivantes.
 
 
 
+[[supported-data-broker-locations-for-amazon-s3]]
 === Emplacements des courtiers de données pris en charge pour Amazon S3
 
 Les relations de synchronisation qui incluent le stockage S3 nécessitent un courtier de données déployé dans AWS ou sur vos locaux.  Dans les deux cas, Copy and Sync vous invite à associer le courtier de données à un compte AWS lors de l'installation.
@@ -75,12 +80,14 @@ Les relations de synchronisation qui incluent le stockage S3 nécessitent un cou
 
 
 
+[[supported-aws-regions]]
 === Régions AWS prises en charge
 
 Toutes les régions sont prises en charge, à l'exception des régions de Chine.
 
 
 
+[[permissions-required-for-s3-buckets-in-other-aws-accounts]]
 === Autorisations requises pour les compartiments S3 dans d'autres comptes AWS
 
 Lors de la configuration d'une relation de synchronisation, vous pouvez spécifier un compartiment S3 qui réside dans un compte AWS qui n'est pas associé à un courtier de données.
@@ -106,24 +113,28 @@ image:screenshot_iam_role_arn.gif["Une capture d'écran de la console AWS IAM mo
 
 
 
+[[blobazure-blob-storage-requirements]]
 == [[blob]]Exigences de stockage Azure Blob
 
 Assurez-vous que votre stockage d’objets blob Azure répond aux exigences suivantes.
 
 
 
+[[supported-data-broker-locations-for-azure-blob]]
 === Emplacements des courtiers de données pris en charge pour Azure Blob
 
 Un courtier de données peut résider à n’importe quel emplacement lorsqu’une relation de synchronisation inclut le stockage Azure Blob.
 
 
 
+[[supported-azure-regions]]
 === Régions Azure prises en charge
 
 Toutes les régions sont prises en charge, à l'exception des régions Chine, Gouvernement américain et Département de la Défense américain.
 
 
 
+[[connection-string-for-relationships-that-include-azure-blob-and-nfssmb]]
 === Chaîne de connexion pour les relations qui incluent Azure Blob et NFS/SMB
 
 Lors de la création d'une relation de synchronisation entre un conteneur Azure Blob et un serveur NFS ou SMB, vous devez fournir Copy et Sync avec la chaîne de connexion du compte de stockage :
@@ -145,12 +156,14 @@ NOTE: Si vous choisissez d’implémenter une relation de synchronisation contin
 
 
 
+[[azure-data-lake-storage-gen2]]
 == Stockage Azure Data Lake Gen2
 
 Lors de la création d’une relation de synchronisation qui inclut Azure Data Lake, vous devez fournir Copie et synchronisation avec la chaîne de connexion du compte de stockage.  Il doit s'agir d'une chaîne de connexion régulière et non d'une signature d'accès partagé (SAS).
 
 
 
+[[azure-netapp-files-requirement]]
 == Exigences relatives aux Azure NetApp Files
 
 Utilisez le niveau de service Premium ou Ultra lorsque vous synchronisez des données vers ou depuis Azure NetApp Files.  Vous risquez de rencontrer des échecs et des problèmes de performances si le niveau de service du disque est Standard.
@@ -162,6 +175,7 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
+[[box-requirements]]
 == Exigences relatives à la boîte
 
 * Pour créer une relation de synchronisation qui inclut Box, vous devrez fournir les informations d'identification suivantes :
@@ -189,12 +203,14 @@ link:task-managing-data-brokers.html#set-up-a-unified-configuration["Découvrez 
 
 
 
+[[googlegoogle-cloud-storage-bucket-requirements]]
 == [[google]]Exigences relatives au bucket Google Cloud Storage
 
 Assurez-vous que votre bucket Google Cloud Storage répond aux exigences suivantes.
 
 
 
+[[supported-data-broker-locations-for-google-cloud-storage]]
 === Emplacements des courtiers de données pris en charge pour Google Cloud Storage
 
 Les relations de synchronisation qui incluent Google Cloud Storage nécessitent un courtier de données déployé dans Google Cloud ou sur vos locaux.  Copy and Sync vous guide tout au long du processus d'installation du courtier de données lorsque vous créez une relation de synchronisation.
@@ -205,32 +221,37 @@ Les relations de synchronisation qui incluent Google Cloud Storage nécessitent 
 
 
 
+[[supported-google-cloud-regions]]
 === Régions Google Cloud prises en charge
 
 Toutes les régions sont prises en charge.
 
 
 
+[[permissions-for-buckets-in-other-google-cloud-projects]]
 === Autorisations pour les buckets dans d'autres projets Google Cloud
 
 Lors de la configuration d'une relation de synchronisation, vous pouvez choisir parmi les buckets Google Cloud dans différents projets, si vous fournissez les autorisations requises au compte de service du courtier de données. link:task-installing-gcp.html["Apprenez à configurer le compte de service"] .
 
 
 
+[[permissions-for-a-snapmirror-destination]]
 === Autorisations pour une destination SnapMirror
 
 Si la source d'une relation de synchronisation est une destination SnapMirror (qui est en lecture seule), les autorisations « lecture/liste » sont suffisantes pour synchroniser les données de la source vers une cible.
 
 
 
+[[encrypting-a-google-cloud-bucket]]
 === Chiffrer un bucket Google Cloud
 
 Vous pouvez chiffrer un bucket Google Cloud cible avec une clé KMS gérée par le client ou la clé par défaut gérée par Google.  Si le bucket dispose déjà d'un cryptage KMS, il remplacera le cryptage par défaut géré par Google.
 
-Pour ajouter une clé KMS gérée par le client, vous devrez utiliser un courtier de données avec le https://docs.netapp.com/us-en/bluexp-copy-sync/task-installing-gcp.html#permissions-required-for-the-service-account["autorisations correctes"] , et la clé doit être dans la même région que le bucket.
+Pour ajouter une clé KMS gérée par le client, vous devrez utiliser un courtier de données avec la link:task-installing-gcp.html#permissions-required-for-the-service-account["autorisations correctes"], et la clé doit se trouver dans la même région que le compartiment.
 
 
 
+[[google-drive]]
 == Google Drive
 
 Lorsque vous configurez une relation de synchronisation qui inclut Google Drive, vous devez fournir les éléments suivants :
@@ -254,6 +275,7 @@ Lorsque vous modifiez le champ Étendues OAuth, saisissez les étendues suivante
 
 
 
+[[nfs-server-requirements]]
 == Configuration requise pour le serveur NFS
 
 * Le serveur NFS peut être un système NetApp ou un système non NetApp .
@@ -277,12 +299,14 @@ NOTE: Le paramètre par défaut pour showmount est _enabled_ à partir d' ONTAP 
 
 
 
+[[ontap-requirements]]
 == Exigences ONTAP
 
 Si la relation de synchronisation inclut Cloud Volumes ONTAP ou un cluster ONTAP sur site et que vous avez sélectionné NFSv4 ou une version ultérieure, vous devrez activer les ACL NFSv4 sur le système ONTAP .  Ceci est nécessaire pour copier les ACL.
 
 
 
+[[ontap-s3-storage-requirements]]
 == Exigences de stockage ONTAP S3
 
 Lorsque vous configurez une relation de synchronisation qui inclut https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["Stockage ONTAP S3"^] , vous devrez fournir les éléments suivants :
@@ -293,6 +317,7 @@ Lorsque vous configurez une relation de synchronisation qui inclut https://docs.
 
 
 
+[[smb-server-requirements]]
 == Configuration requise pour le serveur SMB
 
 * Le serveur SMB peut être un système NetApp ou un système non NetApp .
@@ -321,12 +346,14 @@ Si vous n'accordez pas cette autorisation, le courtier de données risque de ne 
 
 
 
+[[smb-limitation-for-hidden-directories-and-files]]
 === Limitation SMB pour les répertoires et fichiers cachés
 
 Une limitation SMB affecte les répertoires et fichiers cachés lors de la synchronisation des données entre les serveurs SMB.  Si l’un des répertoires ou fichiers du serveur SMB source a été masqué via Windows, l’attribut masqué n’est pas copié sur le serveur SMB cible.
 
 
 
+[[smb-sync-behavior-due-to-case-insensitivity-limitation]]
 === Comportement de synchronisation SMB en raison de la limitation de l'insensibilité à la casse
 
 Le protocole SMB n'est pas sensible à la casse, ce qui signifie que les lettres majuscules et minuscules sont traitées comme étant identiques.  Ce comportement peut entraîner des fichiers écrasés et des erreurs de copie de répertoire, si une relation de synchronisation inclut un serveur SMB et que des données existent déjà sur la cible.
