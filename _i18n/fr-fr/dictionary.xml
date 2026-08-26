@@ -639,7 +639,6 @@
   <block id="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="paragraph"><block ref="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a7470fea96bed8b75bf17e5f07e01a4" category="list-text">[[settings]]Sur la page *Paramètres*, définissez comment les fichiers et dossiers sources sont synchronisés et conservés dans l'emplacement cible :</block>
   <block id="25f7347236b51a5eae4ba01a7862cb55" category="list-text">Calendrier</block>
-  <block id="3e8e8a2afdd515355f098433677b9baa" category="list-text">Choisissez un calendrier récurrent pour les synchronisations futures ou désactivez le calendrier de synchronisation.  Vous pouvez planifier une relation pour synchroniser les données aussi souvent que toutes les 1 minute.</block>
   <block id="64b10e9eb890594a5a1756353aca634b" category="list-text">Délai de synchronisation expiré</block>
   <block id="3231a933fa5fac58c16e6d443f352009" category="list-text">Définissez si la copie et la synchronisation doivent annuler une synchronisation de données si la synchronisation n'est pas terminée dans le nombre de minutes, d'heures ou de jours spécifié.</block>
   <block id="a274f4d4670213a9045ce258c6c56b80" category="list-text">Notifications</block>
@@ -1985,4 +1984,6 @@
   <block id="23239688169f4a4cc657d5ef5443f34b" category="paragraph"><block ref="23239688169f4a4cc657d5ef5443f34b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7bed8c71bfbfa7b7847f7029d0d74ccc" category="paragraph"><block ref="7bed8c71bfbfa7b7847f7029d0d74ccc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6c786f9f2baf8236d6ee8e864e78e415" category="list-text"><block ref="6c786f9f2baf8236d6ee8e864e78e415" category="inline-link-rx"></block></block>
+  <block id="46a9d70b85a901c8a4c1eaf05d1a35db" category="admonition">Lorsque vous définissez le planning, vous devez saisir une valeur pour le moment où *La prochaine synchronisation démarrera automatiquement*. Copy and Sync utilise *UTC*, et non l'heure locale. Planifiez en conséquence lorsque vous définissez l'heure programmée.</block>
+  <block id="240f236bfdc0495169ba6aec758c6dd2" category="list-text">Choisissez une planification récurrente pour les synchronisations futures ou désactivez la planification de synchronisation. Vous pouvez programmer une relation pour synchroniser les données aussi souvent que toutes les 1 minute. Les planifications peuvent également être définies à des fréquences horaires et quotidiennes.</block>
 </blocks>

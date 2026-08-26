@@ -134,7 +134,17 @@ image:screenshot_sync_settings.png["Une capture d’écran qui montre les param�
 [[deleteonsource]] Voici une brève description de chaque paramètre :
 
 +
-Calendrier:: Choisissez un calendrier récurrent pour les synchronisations futures ou désactivez le calendrier de synchronisation.  Vous pouvez planifier une relation pour synchroniser les données aussi souvent que toutes les 1 minute.
+Calendrier:: Choisissez une planification récurrente pour les synchronisations futures ou désactivez la planification de synchronisation. Vous pouvez programmer une relation pour synchroniser les données aussi souvent que toutes les 1 minute. Les planifications peuvent également être définies à des fréquences horaires et quotidiennes.
++
+--
+
+IMPORTANT: Lorsque vous définissez le planning, vous devez saisir une valeur pour le moment où *La prochaine synchronisation démarrera automatiquement*. Copy and Sync utilise *UTC*, et non l'heure locale. Planifiez en conséquence lorsque vous définissez l'heure programmée.
+
+--
+
+
+
+
 Délai de synchronisation expiré:: Définissez si la copie et la synchronisation doivent annuler une synchronisation de données si la synchronisation n'est pas terminée dans le nombre de minutes, d'heures ou de jours spécifié.
 Notifications:: Vous permet de choisir de recevoir ou non des notifications de copie et de synchronisation dans le centre de notifications de la console NetApp .  Vous pouvez activer les notifications pour les synchronisations de données réussies, les synchronisations de données ayant échoué et les synchronisations de données annulées.
 +
@@ -150,8 +160,8 @@ Même si vous décochez ces attributs, Copy and Sync compare toujours la source 
 
 Vous pouvez choisir d'activer ou de désactiver la copie et la synchronisation en comparant les attributs suivants :
 
-** *mtime* : L'heure de la dernière modification d'un fichier.  Cet attribut n'est pas valide pour les répertoires.
-** *uid*, *gid* et *mode* : indicateurs d'autorisation pour Linux.
+* *mtime* : L'heure de la dernière modification d'un fichier.  Cet attribut n'est pas valide pour les répertoires.
+* *uid*, *gid* et *mode* : indicateurs d'autorisation pour Linux.
 
 
 --
@@ -203,9 +213,12 @@ Taille du fichier:: Choisissez de synchroniser tous les fichiers quelle que soit
 Date de modification:: Sélectionnez tous les fichiers quelle que soit leur date de dernière modification, les fichiers modifiés après une date spécifique, avant une date spécifique ou entre une période donnée.
 Date de création:: Lorsqu'un serveur SMB est la source, ce paramètre vous permet de synchroniser les fichiers créés après une date spécifique, avant une date spécifique ou entre une plage horaire spécifique.
 ACL - Liste de contrôle d'accès:: Copiez uniquement les ACL, uniquement les fichiers ou les ACL et les fichiers à partir d'un serveur SMB en activant un paramètre lorsque vous créez une relation ou après avoir créé une relation.
-
-
++
+--
 . Sélectionnez *Enregistrer les paramètres*.
+
+
+--
 
 
 .Résultat

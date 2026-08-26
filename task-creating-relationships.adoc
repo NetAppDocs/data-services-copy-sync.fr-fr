@@ -109,7 +109,17 @@ image:screenshot_bucket_setup.gif["Cette capture d'écran montre la page de conf
 
 . [[settings]]Sur la page *Paramètres*, définissez comment les fichiers et dossiers sources sont synchronisés et conservés dans l'emplacement cible :
 +
-Calendrier:: Choisissez un calendrier récurrent pour les synchronisations futures ou désactivez le calendrier de synchronisation.  Vous pouvez planifier une relation pour synchroniser les données aussi souvent que toutes les 1 minute.
+Calendrier:: Choisissez une planification récurrente pour les synchronisations futures ou désactivez la planification de synchronisation. Vous pouvez programmer une relation pour synchroniser les données aussi souvent que toutes les 1 minute. Les planifications peuvent également être définies à des fréquences horaires et quotidiennes.
++
+--
+
+IMPORTANT: Lorsque vous définissez le planning, vous devez saisir une valeur pour le moment où *La prochaine synchronisation démarrera automatiquement*. Copy and Sync utilise *UTC*, et non l'heure locale. Planifiez en conséquence lorsque vous définissez l'heure programmée.
+
+--
+
+
+
+
 Délai de synchronisation expiré:: Définissez si la copie et la synchronisation doivent annuler une synchronisation de données si la synchronisation n'est pas terminée dans le nombre de minutes, d'heures ou de jours spécifié.
 Notifications:: Vous permet de choisir de recevoir ou non des notifications de copie et de synchronisation dans le centre de notifications de la console NetApp .  Vous pouvez activer les notifications pour les synchronisations de données réussies, les synchronisations de données ayant échoué et les synchronisations de données annulées.
 Nouvelles tentatives:: Définissez le nombre de fois que Copier et Synchroniser doivent réessayer de synchroniser un fichier avant de l'ignorer.
@@ -120,17 +130,17 @@ Ce paramètre est disponible uniquement lors de la création d'une relation de s
 
 Si vous activez ce paramètre, cela affecte d’autres fonctionnalités comme suit :
 
-** La planification de synchronisation est désactivée.
-** Les paramètres suivants sont rétablis à leurs valeurs par défaut : Délai de synchronisation, Fichiers récemment modifiés et Date de modification.
-** Si S3 est la source, le filtre par taille sera actif uniquement sur les événements de copie (pas sur les événements de suppression).
-** Une fois la relation créée, vous pouvez uniquement l'accélérer ou la supprimer.  Vous ne pouvez pas interrompre les synchronisations, modifier les paramètres ou afficher les rapports.
+* La planification de synchronisation est désactivée.
+* Les paramètres suivants sont rétablis à leurs valeurs par défaut : Délai de synchronisation, Fichiers récemment modifiés et Date de modification.
+* Si S3 est la source, le filtre par taille sera actif uniquement sur les événements de copie (pas sur les événements de suppression).
+* Une fois la relation créée, vous pouvez uniquement l'accélérer ou la supprimer.  Vous ne pouvez pas interrompre les synchronisations, modifier les paramètres ou afficher les rapports.
 +
 Il est possible de créer une relation de synchronisation continue avec un bucket externe.  Pour ce faire, suivez ces étapes :
 
 +
-... Accédez à la console Google Cloud pour le projet du bucket externe.
-... Accédez à *Stockage Cloud > Paramètres > Compte de service de stockage Cloud*.
-... Mettre à jour le fichier local.json :
+.. Accédez à la console Google Cloud pour le projet du bucket externe.
+.. Accédez à *Stockage Cloud > Paramètres > Compte de service de stockage Cloud*.
+.. Mettre à jour le fichier local.json :
 +
 [source, json]
 ----
@@ -142,13 +152,13 @@ Il est possible de créer une relation de synchronisation continue avec un bucke
 }
 }
 ----
-... Redémarrez le courtier de données :
+.. Redémarrez le courtier de données :
 +
-.... sudo pm2 arrêter tout
-.... sudo pm2 démarrer tout
+... sudo pm2 arrêter tout
+... sudo pm2 démarrer tout
 
 
-... Créez une relation de synchronisation continue avec le bucket externe concerné.
+.. Créez une relation de synchronisation continue avec le bucket externe concerné.
 +
 
 NOTE: Un courtier de données utilisé pour créer une relation de synchronisation continue avec un bucket externe ne pourra pas créer une autre relation de synchronisation continue avec un bucket de son projet.
@@ -165,8 +175,8 @@ Même si vous décochez ces attributs, Copy and Sync compare toujours la source 
 
 Vous pouvez choisir d'activer ou de désactiver la copie et la synchronisation en comparant les attributs suivants :
 
-** *mtime* : L'heure de la dernière modification d'un fichier.  Cet attribut n'est pas valide pour les répertoires.
-** *uid*, *gid* et *mode* : indicateurs d'autorisation pour Linux.
+* *mtime* : L'heure de la dernière modification d'un fichier.  Cet attribut n'est pas valide pour les répertoires.
+* *uid*, *gid* et *mode* : indicateurs d'autorisation pour Linux.
 
 
 --
@@ -179,11 +189,11 @@ La copie de balises est prise en charge avec les relations de synchronisation qu
 
 La copie des métadonnées est prise en charge avec des relations « cloud à cloud » entre l’un des points de terminaison suivants :
 
-** AWS S3
-** Azure Blob
-** Stockage Google Cloud
-** Stockage d'objets IBM Cloud
-** StorageGRID
+* AWS S3
+* Azure Blob
+* Stockage Google Cloud
+* Stockage d'objets IBM Cloud
+* StorageGRID
 
 
 --
@@ -234,8 +244,8 @@ Taille du fichier:: Choisissez de synchroniser tous les fichiers quelle que soit
 Date de modification:: Sélectionnez tous les fichiers quelle que soit leur date de dernière modification, les fichiers modifiés après une date spécifique, avant une date spécifique ou entre une période donnée.
 Date de création:: Lorsqu'un serveur SMB est la source, ce paramètre vous permet de synchroniser les fichiers créés après une date spécifique, avant une date spécifique ou entre une plage horaire spécifique.
 ACL - Liste de contrôle d'accès:: Copiez uniquement les ACL, uniquement les fichiers ou les ACL et les fichiers à partir d'un serveur SMB en activant un paramètre lorsque vous créez une relation ou après avoir créé une relation.
-
-
++
+--
 . Sur la page *Tags/Métadonnées*, choisissez d'enregistrer une paire clé-valeur en tant que balise sur tous les fichiers transférés vers le bucket S3 ou d'attribuer une paire clé-valeur de métadonnées à tous les fichiers.
 +
 image:screenshot_relationship_tags.png["Une capture d'écran qui montre la page Balises/Métadonnées lors de la création d'une relation de synchronisation avec Amazon S3."]
@@ -245,6 +255,9 @@ image:screenshot_relationship_tags.png["Une capture d'écran qui montre la page 
 TIP: Cette même fonctionnalité est disponible lors de la synchronisation des données avec StorageGRID et IBM Cloud Object Storage.  Pour Azure et Google Cloud Storage, seule l’option métadonnées est disponible.
 
 . Vérifiez les détails de la relation de synchronisation, puis sélectionnez *Créer une relation*.
+
+
+--
 
 
 *Résultat*
