@@ -4,7 +4,7 @@ permalink: task-nfs-encryption.html
 keywords: encryption, in flight, data in flight, in-flight, data-in-flight, nfs, initiator, listener, port 
 summary: Si votre entreprise dispose de politiques de sécurité strictes, synchronisez les données entre les serveurs NFS de différents réseaux à l’aide du chiffrement des données en cours de transmission. 
 ---
-= Synchronisez les données NFS à l'aide du chiffrement des données en vol dans NetApp Copy and Sync
+= Créez des relations de synchronisation NFS chiffrées avec NetApp Copy and Sync
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
