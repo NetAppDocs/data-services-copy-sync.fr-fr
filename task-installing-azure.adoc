@@ -54,19 +54,67 @@ Si vous devez limiter la connectivité sortante, consultezlink:reference-network
 
 Assurez-vous que le compte d’utilisateur Azure que vous utilisez pour déployer le courtier de données dispose des autorisations suivantes :
 
-[]
-====
-{ "Name": "Azure Data Broker", "Actions": [ "Microsoft.Resources/subscriptions/read", "Microsoft.Resources/deployments/operationstatuses/read", "Microsoft.Resources/subscriptions/locations/read", "Microsoft.Network/networkInterfaces/read", "Microsoft.Network/virtualNetworks/subnets/read", "Microsoft.Resources/subscriptions/resourceGroups/write", "Microsoft.Resources/subscriptions/resourceGroups/delete", "Microsoft.Resources/deployments/write", "Microsoft.Resources/deployments/validate/action", "Microsoft.Resources/deployments/operationStatuses/read", "Microsoft.Resources/deployments/cancel/action", "Microsoft.Compute/virtualMachines/read", "Microsoft.Compute/virtualMachines/delete", "Microsoft.Compute/disks/delete", "Microsoft.Network/networkInterfaces/delete", "Microsoft.Network/publicIPAddresses/delete", "Microsoft.Network/networkSecurityGroups/securityRules/delete", "Microsoft.Resources/subscriptions/resourceGroups/write", "Microsoft.Compute/virtualMachines/delete", "Microsoft.Network/networkSecurityGroups/write", "Microsoft.Network/networkSecurityGroups/join/action", "Microsoft.Compute/disks/write", "Microsoft.Network/networkInterfaces/write", "Microsoft.Network/virtualNetworks/read", "Microsoft.Network/publicIPAddresses/write", "Microsoft.Compute/virtualMachines/write", "Microsoft.Compute/virtualMachines/extensions/write", "Microsoft.Resources/deployments/read", "Microsoft.Network/networkSecurityGroups/read", "Microsoft.Network/publicIPAddresses/read", "Microsoft.Network/virtualNetworks/subnets/join/action", "Microsoft.Network/publicIPAddresses/join/action", "Microsoft.Network/networkInterfaces/join/action", "Microsoft.Storage/storageAccounts/read", "Microsoft.EventGrid/systemTopics/eventSubscriptions/write", "Microsoft.EventGrid/systemTopics/eventSubscriptions/read", "Microsoft.EventGrid/systemTopics/eventSubscriptions/delete", "Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action", "Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/action", "Microsoft.EventGrid/systemTopics/read", "Microsoft.EventGrid/systemTopics/write", "Microsoft.EventGrid/systemTopics/delete", "Microsoft.EventGrid/eventSubscriptions/write", "Microsoft.Storage/storageAccounts/write", "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read", "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write", "Microsoft.Network/networkSecurityGroups/securityRules/read", "Microsoft.Network/networkSecurityGroups/read",
+[source, json]
+----
+{
+    "Name": "Azure Data Broker",
+    "Actions": [
+					"Microsoft.Resources/subscriptions/read",
+                    "Microsoft.Resources/deployments/operationstatuses/read",
+                    "Microsoft.Resources/subscriptions/locations/read",
+                    "Microsoft.Network/networkInterfaces/read",
+                    "Microsoft.Network/virtualNetworks/subnets/read",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Resources/subscriptions/resourceGroups/delete",
+                    "Microsoft.Resources/deployments/write",
+                    "Microsoft.Resources/deployments/validate/action",
+                    "Microsoft.Resources/deployments/operationStatuses/read",
+                    "Microsoft.Resources/deployments/cancel/action",
+                    "Microsoft.Compute/virtualMachines/read",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Compute/disks/delete",
+                    "Microsoft.Network/networkInterfaces/delete",
+                    "Microsoft.Network/publicIPAddresses/delete",
+                    "Microsoft.Network/networkSecurityGroups/securityRules/delete",
+                    "Microsoft.Resources/subscriptions/resourceGroups/write",
+                    "Microsoft.Compute/virtualMachines/delete",
+                    "Microsoft.Network/networkSecurityGroups/write",
+                    "Microsoft.Network/networkSecurityGroups/join/action",
+                    "Microsoft.Compute/disks/write",
+                    "Microsoft.Network/networkInterfaces/write",
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/publicIPAddresses/write",
+                    "Microsoft.Compute/virtualMachines/write",
+                    "Microsoft.Compute/virtualMachines/extensions/write",
+                    "Microsoft.Resources/deployments/read",
+                    "Microsoft.Network/networkSecurityGroups/read",
+                    "Microsoft.Network/publicIPAddresses/read",
+                    "Microsoft.Network/virtualNetworks/subnets/join/action",
+                    "Microsoft.Network/publicIPAddresses/join/action",
+                    "Microsoft.Network/networkInterfaces/join/action",
+                    "Microsoft.Storage/storageAccounts/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/write",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/read",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/delete",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getFullUrl/action",
+                    "Microsoft.EventGrid/systemTopics/eventSubscriptions/getDeliveryAttributes/action",
+                    "Microsoft.EventGrid/systemTopics/read",
+                    "Microsoft.EventGrid/systemTopics/write",
+                    "Microsoft.EventGrid/systemTopics/delete",
+                    "Microsoft.EventGrid/eventSubscriptions/write",
+                    "Microsoft.Storage/storageAccounts/write"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read"
+                    "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write"
+                    "Microsoft.Network/networkSecurityGroups/securityRules/read",
+        	        "Microsoft.Network/networkSecurityGroups/read",
 
-....
     ],
     "NotActions": [],
     "AssignableScopes": [],
     "Description": "Azure Data Broker",
     "IsCustom": "true"
 }
-....
-====
+----
 Les autorisations suivantes ne sont requises que si vous prévoyez d'activer la link:task-creating-relationships.html["Paramètre de synchronisation continue"] sur une relation de synchronisation d'Azure vers un autre emplacement de stockage cloud :
 
 * 'Microsoft.Storage/storageAccounts/lecture',
@@ -143,8 +191,7 @@ Le processus peut prendre jusqu'à 7 minutes.
 .Résultat
 Vous avez déployé un courtier de données dans Azure et créé une nouvelle relation de synchronisation.  Vous pouvez utiliser ce courtier de données avec des relations de synchronisation supplémentaires.
 
-.Vous recevez un message indiquant que vous avez besoin du consentement de l’administrateur ?
-****
+.Après avoir terminé
 Si Microsoft vous informe que l'approbation de l'administrateur est requise parce que Copy and Sync a besoin d'une autorisation pour accéder aux ressources de votre organisation en votre nom, vous avez alors deux options :
 
 . Demandez à votre administrateur AD de vous fournir l’autorisation suivante :
@@ -153,14 +200,13 @@ Dans Azure, accédez à *Centres d’administration > Azure AD > Utilisateurs et
 
 . Demandez à votre administrateur AD de consentir en votre nom à *CloudSync-AzureDataBrokerCreator* en utilisant l'URL suivante (il s'agit du point de terminaison de consentement de l'administrateur) :
 +
-\ https://login.microsoftonline.com/ {REMPLISSEZ ICI VOTRE ID DE LOCATAIRE}/v2.0/adminconsent?client_id=8ee4ca3a-bafa-4831-97cc-5a38923cab85&redirect_uri= https://cloudsync.netapp.com&scope=https://management.azure.com/user_impersonationhttps://graph.microsoft.com/User.Read
+`\https://login.microsoftonline.com/{FILL HERE YOUR TENANT ID}/v2.0/adminconsent?client_id=8ee4ca3a-bafa-4831-97cc-5a38923cab85&redirect_uri=https://cloudsync.netapp.com&scope=https://management.azure.com/user_impersonationhttps://graph.microsoft.com/User.Read`
 
 +
 Comme indiqué dans l'URL, l'URL de notre application est \ https://cloudsync.netapp.com et l'ID client de l'application est 8ee4ca3a-bafa-4831-97cc-5a38923cab85.
 
 
 
-****
 
 
 [[details-about-the-data-broker-vm]]

@@ -54,7 +54,7 @@ Pour la tarification à l'utilisation, les frais de service de copie et de synch
 
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["Afficher les tarifs à l'utilisation dans AWS"^]
 * https://aws.amazon.com/marketplace/pp/B06XX5V3M2["Consultez les tarifs annuels dans AWS"^]
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Afficher les tarifs dans Azure"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["Afficher les tarifs dans Azure"^]
 
 
 Les licences de copie et de synchronisation sont également disponibles auprès de votre représentant NetApp .  Chaque licence permet 20 relations de synchronisation pendant 12 mois.

@@ -37,7 +37,7 @@ Copy and Sync prend uniquement en charge les abonnements Marketplace d'**AWS** e
 
 Avec un abonnement horaire à la carte, vous êtes facturé à l'heure en fonction du nombre de relations de synchronisation que vous créez.
 
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice["Afficher les tarifs dans Azure"^]
+* https://marketplace.microsoft.com/en-us/product/netapp.cloud-sync-service?tab=PlansAndPrice["Afficher les tarifs dans Azure"^]
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ["Afficher les tarifs à l'utilisation dans AWS"^]
 
 

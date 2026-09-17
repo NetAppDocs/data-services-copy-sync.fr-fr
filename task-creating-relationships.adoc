@@ -262,7 +262,7 @@ TIP: Cette même fonctionnalité est disponible lors de la synchronisation des d
 
 *Résultat*
 
-La fonction Copier et Sync lance la synchronisation des données entre la source et la cible. Des statistiques de synchronisation indiquant la durée de la synchronisation, si elle a été interrompue, ainsi que le nombre de fichiers copiés, analysés ou supprimés sont disponibles. Vous pouvez ensuite gérer vos link:task-managing-relationships.html["synchroniser les relations"], link:task-managing-data-brokers.html["gérez vos courtiers en données"] ou link:task-managing-reports.html#creating-reports["créer des rapports pour optimiser vos performances et votre configuration"].
+La fonction Copier et Sync lance la synchronisation des données entre la source et la cible. Des statistiques de synchronisation indiquant la durée de la synchronisation, si elle a été interrompue, ainsi que le nombre de fichiers copiés, analysés ou supprimés sont disponibles. Vous pouvez ensuite gérer vos link:task-managing-relationships.html["synchroniser les relations"], link:task-managing-data-brokers.html["gérez vos courtiers en données"] ou link:task-managing-reports.html["créer des rapports pour optimiser vos performances et votre configuration"].
 
 
 
